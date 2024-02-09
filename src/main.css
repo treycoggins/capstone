@@ -1,0 +1,36 @@
+@import "tailwind/base";
+@import "tailwind/components";
+@import "tailwind/utilities/";
+@import "./publicd/css/home";
+@import "./public/css/signup";
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+:root {
+	--primary-light: #38785d;
+	--primary: #175442;
+	--primary-medium: #06543c;
+	--primary-dark: #063427;
+	--secondary-light: #d7b87a;
+	--secondary-dark: #af8c4a;
+}
+
+/*////////////////////////////*/
+/* SIGN UP */
+/*////////////////////////////*/
+
+/*///////////////////////////////*/
+/*SIGN IN*/
+/*///////////////////////////////*/
+
+.validated {
+	color: var(--primary-light);
+}
+
+/*///////////////////////////////*/
+/* FOOTER */
+/*///////////////////////////////*/
+
+#footer {
+	flex: 1 1 25vh;
+}
