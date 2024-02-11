@@ -1,44 +1,31 @@
-<?php require('partials/head.php') ?>
+<?php require('partials/_head.php'); ?>
 
-<body class="overflow-hidden bg-slate-200 text-primary font-sans min-h-full">
-  <div class="overlay relative">
-    <i id="navMenu-close" class="stroke-secondary-light absolute top-10 left-10 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
-  </div>
+<body class="overflow-x-hidden bg-slate-200 text-primary font-sans">
   <header class="bg-primary-dark border-b-2 border-secondary-dark text-primary-dark h-min">
     <div class="flex pt-4 justify-between">
-      <div class="flex flex-col w-2/12 px-4 cursor-pointer">
-        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
-        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
-        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
-      </div>
-      <div class="m-0 tablet:m-auto text-secondary-dark">
+      <div class="mt-4 mx-4 text-secondary-dark">
         <a href="/">
-          <img class="h-16 w-24" src="../public/img/logo.png" alt="BitBuggy Logo" />
+          <img class="h-auto w-20" src="../public/img/logo.png" alt="BitBuggy Logo" />
         </a>
       </div>
-      <div id="header-nav-menu-items" class="flex text-secondary-dark items-center">
-        <div id="user-icon" class="flex items-center hover:text-secondary-light">
-          <a href="/signup" class="">
-            <i data-feather="user" class="size-8 tablet:size-14"></i>
-          </a>
-        </div>
-        <div class="hover:text-secondary-light">
-          <i id="shopping-cart" data-feather="shopping-cart" class="size-8 tablet:size-14 cursor-pointer"></i>
-          <p id="shopping-count" class="text-lg tablet:text-2xl">0</p>
-        </div>
+      <div id="hamburger" class="flex flex-col p-6 cursor-pointer">
+        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
+        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
+        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
       </div>
     </div>
-    <form id="header-search-container" class="py-3 flex justify-center items-center" action="/products" method="GET">
+    <i id="navMenu-close" class="hidden stroke-secondary-light absolute top-10 right-10 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
+    <form class="py-3 flex justify-center items-center" action="/products" method="GET">
       <input class="rounded-md p-2 w-10/12 tablet:w-8/12" type="text" id="header-search-field" name="header-search-field" placeholder="Search products">
       <button type="submit" onclick="findItems()"><i id="search-tool" data-feather="search"></i></button>
     </form>
   </header>
 
-  <nav id="nav" class="bg-secondary-dark flex tablet:text-2xl">
-    <div class="flex flex-col py-4 bg-secondary-light text-primary">
+  <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex nav-close">
+    <div class="flex flex-col h-1/6 py-4 bg-secondary-light">
       <div id="user-login" class="flex justify-end me-3">
         <a href="/signin">
-          <p class="self-center text-sm pe-2 cursor-pointer">Sign in</p>
+          <p class="self-center text-sm pe-2">Sign in</p>
         </a>
         <i data-feather="user"></i>
       </div>
@@ -47,14 +34,14 @@
         <p><strong>BitBuggy</strong></p>
       </div>
     </div>
-    <ul class="nav-links mx-4 text-primary">
-      <li class="nav-link-item flex m-4 cursor-pointer">
-        <a href="/"></a><i class="size-5 mx-2" data-feather="home"></i>Home</a>
+    <ul class="mx-4 text-primary">
+      <li class="flex m-4">
+        <a href="/"><i class="size-5 mx-2" data-feather="home"></i>Home</a>
       </li>
-      <li class="nav-link-item flex m-4 cursor-pointer">
-        <a href="/products"></a><i class="size-5 mx-2" data-feather="package"></i>Products</a>
+      <li class="flex m-4">
+        <a href="/products"><i class="size-5 mx-2" data-feather="package"></i>Products</a>
       </li>
-      <li class="nav-link-item flex m-4 cursor-pointer">
+      <li class="flex m-4">
         <a href="/signup"><i class="size-5 mx-2" data-feather="user-check"></i></a><a href="/signup">Become a
           Member</a>
       </li>
@@ -62,23 +49,18 @@
   </nav>
 
   <main class="relative">
-    <section class="h-px-650">
-      <div class="secondary-box-shadow">
-        <div class="clip-background-primary"></div>
-      </div>
-      <div id="top-deals-content" class="absolute top-52 left-0 w-full">
-        <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
-        <div id="top-deals-items" class="grid grid-cols-2 h-full">
-          <ul class="text-secondary-dark self-center m-4">
-            <li class="text-xl underline">Apple Products</li>
-            <li class="m-3 text-sm">iPhone:<br /><small class="line-through">$999</small>&#9;💥<small>$799</small>
-            </li>
-            <li class="m-3 text-sm">Smart Watches:<br /><small class="line-through">$499</small>&#9;💥<small>$349</small></li>
-            <li class="text-sm m-3">Macbooks:<br /><small class="line-through">$1499</small>&#9;💥<small>$1299</small>
-            </li>
-          </ul>
-          <img class="self-center rounded-md w-11/12 h-2/3" src="../public/img/apple-products.jpg" alt="apple products">
-        </div>
+    <section class="">
+      <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
+      <div id="top-deals-items" class="grid grid-cols-2 h-full">
+        <ul class="text-secondary-dark self-center m-4">
+          <li class="text-xl underline">Apple Products</li>
+          <li class="m-3 text-sm">iPhone:<br /><small class="line-through">$999</small>&#9;💥<small>$799</small>
+          </li>
+          <li class="m-3 text-sm">Smart Watches:<br /><small class="line-through">$499</small>&#9;💥<small>$349</small></li>
+          <li class="text-sm m-3">Macbooks:<br /><small class="line-through">$1499</small>&#9;💥<small>$1299</small>
+          </li>
+        </ul>
+        <img class="self-center rounded-md w-11/12 h-2/3" src="../public/img/apple-products.jpg" alt="apple products">
       </div>
     </section>
 
@@ -135,7 +117,7 @@
       </div>
     </section>
 
-    <section id="section-top-picks" class="bg-primary-dark w-full pb-12">
+    <section class="bg-primary-dark w-full pb-12">
       <h2 class="font-display text-secondary-dark text-6xl ps-4 py-6 my-12">Top Picks</h2>
       <div class="top-picks-grid m-1 grid grid-col-2 auto-rows-auto gap-2">
         <div class="*:max-w-none"><img class="h-full w-full" src="../public/img/galaxy21.jpg" alt="samsung galaxy 21"></div>
@@ -173,13 +155,13 @@
   </main>
 
 
-  <?php require('partials/footer.php') ?>
+  <?php require('partials/_footer.php'); ?>
 
 
   <script>
     feather.replace();
   </script>
-  <script src="../public/js/home.js"></script>
+  <script src="../public/js/index.js"></script>
 </body>
 
 </html>

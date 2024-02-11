@@ -1,6 +1,6 @@
-<?php require 'partials/head.php' ?>
+<?php require('partials/_head.php'); ?>
 
-<body id="signup-body" class="bg-primary font-san flex flex-col max-h-screen justify-between">
+<body id="signup-body" class="bg-primary font-sans flex flex-col max-h-screen justify-between">
   <header class="bg-primary-dark border-b-2 border-secondary-dark text-primary-dark flex h-min">
     <div class="py-6">
       <a class="ms-2" href="/">
@@ -19,10 +19,10 @@
       <form class="my-1 text-secondary-dark" action="/signup" method="POST">
         <div class="flex flex-col">
           <label class="ms-4" for="first_name">First Name</label>
-          <input id="first-name" name="first_name" type="text" class="input-field self-center m-2 rounded-md text-gray-700 border-black border-2 w-11/12 p-1">
+          <input id="fname" name="first_name" type="text" class="input-field self-center m-2 rounded-md text-gray-700 border-black border-2 w-11/12 p-1">
           <span id="fname-error" class="text-sm mx-4 input-error"></span>
           <label class="ms-4" for="last_name">Last Name</label>
-          <input id="last-name" name="last_name" type="text" class="input-field self-center m-2 rounded-md text-gray-700 border-black border-2 w-11/12 p-1">
+          <input id="lname" name="last_name" type="text" class="input-field self-center m-2 rounded-md text-gray-700 border-black border-2 w-11/12 p-1">
           <span id="lname-error" class="text-sm mx-4 input-error"></span>
           <label class="ms-4" for="email">Email Address</label>
           <input id="email" name="email" type="email" class="input-field self-center m-2 rounded-md text-gray-700 border-black border-2 w-11/12 p-1">
@@ -41,7 +41,7 @@
       </form>
     </section>
   </main>
-  <?php require 'partials/footer.php' ?>
+  <?php require 'partials/_footer.php' ?>
 
 
   <script src="../public/js/signup.js"></script>

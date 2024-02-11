@@ -1,6 +1,6 @@
-<?php require 'partials/head.php' ?>
+<?php require("partials/_head.php"); ?>
 
-<body id="signup-body" class="bg-primary font-san flex flex-col max-h-screen justify-between">
+<body class="bg-primary font-san flex flex-col max-h-screen justify-between">
   <header class="bg-primary-dark border-b-2 border-secondary-dark">
     <div class="py-6">
       <a class="ms-2" href="/">
@@ -30,7 +30,7 @@
   </main>
 
 
-  <?php require 'partials/footer.php' ?>
+  <?php require("partials/_footer.php"); ?>
   <script src="../public/js/signup.js"></script>
   <script>
     feather.replace();

@@ -1,4 +1,2 @@
-<?php 
-
-    require("views/signin.view.php");
-?>
+<?php
+require("views/signin.view.php");

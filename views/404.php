@@ -1,11 +1,11 @@
-<?php require("views/partials/head.php") ?>
+<?php require("views/partials/_head.php") ?>
 
-<body id="404-body" class="bg-slate-200 font-sans w-full flex flex-col justify-center items-center">
-    <header id="header" class="bg-primary-dark border-b-2 border-secondary-dark  m-8 text-primary-dark h-min w-screen flex-0">
-        <div id="header-items" class="flex pt-4 justify-between">
+<body class="bg-slate-200 font-sans w-full flex flex-col justify-center items-center">
+    <header class="bg-primary-dark border-b-2 border-secondary-dark  m-8 text-primary-dark h-min w-screen flex-0">
+        <div class="flex pt-4 justify-between">
             <div class="m-auto text-secondary-dark">
                 <a href="/">
-                    <img id="logo" src="../public/img/logo.png" alt="BitBuggy Logo" class="block" />
+                    <img src="../public/img/logo.png" alt="BitBuggy Logo" class="block" />
                 </a>
             </div>
         </div>
@@ -20,8 +20,8 @@
             </p>
         </a>
     </main>
-    <footer id="footer" class="grid grid-cols-2 bg-primary-dark border-t-2 text-secondary-dark border-secondary-dark flex-0 text-lg w-screen py-6">
-        <div id="social-links" class="m-2 flex flex-col h-full justify-around items-center"></div>
+    <footer class="grid grid-cols-2 bg-primary-dark border-t-2 text-secondary-dark border-secondary-dark flex-0 text-lg w-screen py-6">
+        <div class="m-2 flex flex-col h-full justify-around items-center"></div>
     </footer>
     <script>
         feather.replace();
