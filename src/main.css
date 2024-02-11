@@ -1,8 +1,13 @@
 @import "tailwind/base";
 @import "tailwind/components";
 @import "tailwind/utilities/";
-@import "./publicd/css/home";
+@import "./public/css/index";
 @import "./public/css/signup";
+@import "./public/css/signin";
+@import "./public/css/animations";
+@import "./public/css/footer";
+@import "./public/css/404";
+
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
