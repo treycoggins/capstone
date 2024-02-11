@@ -20,10 +20,3 @@ const navMenuClose = () => {
 hamburger.addEventListener("click", navMenuOpen);
 navMenuCloseBtn.addEventListener("click", navMenuClose);
 navLinks.forEach((navLink) => navLink.addEventListener("click", navMenuClose));
-
-const findItems = () => {
-	const item = document.getElementById("header-search-field").value;
-	const htmlOutput = `<p>Search results for ${item}:</p>`;
-
-	document.getElementById("search-output").innerHTML = htmlOutput;
-};
