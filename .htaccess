@@ -1,12 +1,6 @@
-
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home/surfnoqi/capstone.surfturkey.net"
-PassengerBaseURI "/"
-PassengerNodejs "/home/surfnoqi/nodevenv/capstone.surfturkey.net/14/bin/node"
-PassengerAppType node
-PassengerStartupFile app.js
-# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
 RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]: 
 
 AddType image/png .png
 AddType text/js .js

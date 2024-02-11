@@ -1,31 +1,32 @@
-<?php require 'partials/head.php' ?>
+<?php require('partials/head.php') ?>
 
-<body id="body-home" class="bg-slate-200 font-sans min-h-screen">
-  <div id="overlay" class="overlay relative">
-    <i id="navMenu-close" class="size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
+<body class="overflow-hidden bg-slate-200 text-primary font-sans min-h-full">
+  <div class="overlay relative">
+    <i id="navMenu-close" class="stroke-secondary-light absolute top-10 left-10 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   </div>
-  <header id="header" class="bg-primary-dark border-b-2 border-secondary-dark  m-8 text-primary-dark h-min w-screen flex-0">
-    <div id="hamburger" class="flex flex-col w-2/12 px-4 cursor-pointer">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-    <div class="m-0 tablet:m-auto text-secondary-dark">
-      <a href="/">
-        <img id="logo" src="../public/img/logo.png" alt="BitBuggy Logo" />
-      </a>
-    </div>
-    <div id="header-nav-menu-items" class="flex text-secondary-dark items-center">
-      <div id="user-icon" class="flex items-center hover:text-secondary-light">
-        <a href="/signup" class="">
-          <i data-feather="user" class="size-8 tablet:size-14"></i>
+  <header class="bg-primary-dark border-b-2 border-secondary-dark text-primary-dark h-min">
+    <div class="flex pt-4 justify-between">
+      <div class="flex flex-col w-2/12 px-4 cursor-pointer">
+        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
+        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
+        <div class="bar h-1 w-3 bg-primary m-1 rounded-md"></div>
+      </div>
+      <div class="m-0 tablet:m-auto text-secondary-dark">
+        <a href="/">
+          <img class="h-16 w-24" src="../public/img/logo.png" alt="BitBuggy Logo" />
         </a>
       </div>
-      <div class="hover:text-secondary-light">
-        <i id="shopping-cart" data-feather="shopping-cart" class="size-8 tablet:size-14 cursor-pointer"></i>
-        <p id="shopping-count" class="text-lg tablet:text-2xl">0</p>
+      <div id="header-nav-menu-items" class="flex text-secondary-dark items-center">
+        <div id="user-icon" class="flex items-center hover:text-secondary-light">
+          <a href="/signup" class="">
+            <i data-feather="user" class="size-8 tablet:size-14"></i>
+          </a>
+        </div>
+        <div class="hover:text-secondary-light">
+          <i id="shopping-cart" data-feather="shopping-cart" class="size-8 tablet:size-14 cursor-pointer"></i>
+          <p id="shopping-count" class="text-lg tablet:text-2xl">0</p>
+        </div>
       </div>
-    </div>
     </div>
     <form id="header-search-container" class="py-3 flex justify-center items-center" action="/products" method="GET">
       <input class="rounded-md p-2 w-10/12 tablet:w-8/12" type="text" id="header-search-field" name="header-search-field" placeholder="Search products">
@@ -60,13 +61,13 @@
     </ul>
   </nav>
 
-  <main id="main" class="">
-    <section id="section-top-deals" class="">
+  <main class="relative">
+    <section class="h-px-650">
       <div class="secondary-box-shadow">
         <div class="clip-background-primary"></div>
       </div>
-      <div id="top-deals-content" class="relative top-0 left-0 w-full">
-        <h2 id="top-deals-title" class="text-secondary-dark font-display text-6xl">Top Deals</h2>
+      <div id="top-deals-content" class="absolute top-52 left-0 w-full">
+        <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
         <div id="top-deals-items" class="grid grid-cols-2 h-full">
           <ul class="text-secondary-dark self-center m-4">
             <li class="text-xl underline">Apple Products</li>
@@ -81,11 +82,11 @@
       </div>
     </section>
 
-    <section id="section-membership" class="text-center">
-      <h2 id="section-membership-title" class="text-4xl m-1">Become a member for extra savings and benefits!</h2>
-      <button class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
+    <section class="text-center my-4 relative">
+      <h2 class="text-4xl m-1">Become a member for extra savings and benefits!</h2>
+      <button class="bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
         up now!</button>
-      <div class=" cards-container flex flex-col tablet:flex-row justify-center items-center">
+      <div class="h-full flex flex-col tablet:flex-row justify-center items-center">
         <div class="card text-primary flex flex-col tablet:mx-10 justify-center items-center">
           <i data-feather="truck" class="size-14"></i>
           <h3 class="text-center text-3xl text-sans pt-4">FREE Shipping!</h3>
@@ -113,22 +114,22 @@
       </div>
     </section>
 
-    <section id="section-categories" class="text-primary">
+    <section class="text-primary">
       <div class="primary-box-shadow"">
           <div class=" clip-background-secondary"></div>
       </div>
-      <h2 id="section-categories-title" class="font-display text-5xl ps-4 py-6 my-12">Categories</h2>
-      <div id="category-img-grid" class="grid gap-x-4 gap-y-10 grid-cols-2 grid-rows-2 text-center p-3">
-        <div class="text-xl flex flex-col"><img class="category-img" src="../public/img/iphone-toss.jpg" alt="electronics">
+      <h2 class="font-display text-5xl ps-4 py-6 my-12">Categories</h2>
+      <div class="grid gap-x-4 gap-y-10 grid-cols-2 grid-rows-2 text-center p-3">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone-toss.jpg" alt="electronics">
           <p>Electronics</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="category-img" src="../public/img/fashion2.jpg" alt="fashion model">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/fashion2.jpg" alt="fashion model">
           <p>Fashion</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="category-img" src="../public/img/beauty-face.jpg" alt="beauty products">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty-face.jpg" alt="beauty products">
           <p>Beauty</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="category-img" src="../public/img/kitchen2.jpg" alt="home goods">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen2.jpg" alt="home goods">
           <p>Home Goods</p>
         </div>
       </div>
@@ -137,20 +138,20 @@
     <section id="section-top-picks" class="bg-primary-dark w-full pb-12">
       <h2 class="font-display text-secondary-dark text-6xl ps-4 py-6 my-12">Top Picks</h2>
       <div class="top-picks-grid m-1 grid grid-col-2 auto-rows-auto gap-2">
-        <div class="top-picks-item *:max-w-none"><img class="h-full w-full" src="../public/img/galaxy21.jpg" alt="samsung galaxy 21"></div>
-        <div class="top-picks-item"><img src="../public/img/sonybuds.jpg" alt="sony earbuds"></div>
-        <div class="top-picks-item col-span-2">
+        <div class="*:max-w-none"><img class="h-full w-full" src="../public/img/galaxy21.jpg" alt="samsung galaxy 21"></div>
+        <div class=""><img src="../public/img/sonybuds.jpg" alt="sony earbuds"></div>
+        <div class="col-span-2">
           <img src="../public/img/airpods.jpg" alt="apple airpods">
         </div>
-        <div class="top-picks-item"><img src="../public/img/fashion.jpg" alt="woman on the beach"></div>
-        <div class="top-picks-item"><img src="../public/img/kitchen.jpg" alt="chopping vegetables in the kitchen">
+        <div class=""><img src="../public/img/fashion.jpg" alt="woman on the beach"></div>
+        <div class=""><img src="../public/img/kitchen.jpg" alt="chopping vegetables in the kitchen">
         </div>
-        <div class="top-picks-item col-span-2"><img src="../public/img/camera.jpg" alt="two cameras"></div>
+        <div class="col-span-2"><img src="../public/img/camera.jpg" alt="two cameras"></div>
       </div>
     </section>
 
-    <section id="section-buy-again" class="mt-12 bg-secondary-dark w-full">
-      <h2 id="section-buy-again-title" class="text-5xl font-display text-primary-dark ps-4 py-6 my-12">Buy Again</h2>
+    <section class="mt-12 bg-secondary-dark w-full">
+      <h2 class="text-5xl font-display text-primary-dark ps-4 py-6 my-12">Buy Again</h2>
       <div class="flex flex-col mb-10">
         <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
           <p>Insert Item Here</p>
@@ -172,7 +173,7 @@
   </main>
 
 
-  <?php require 'partials/footer.php' ?>
+  <?php require('partials/footer.php') ?>
 
 
   <script>

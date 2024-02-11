@@ -1,5 +1,3 @@
-<?php 
+<?php
 
-    require("views/home.view.php");
-
-?>
+require("views/index.view.php");
