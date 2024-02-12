@@ -9,14 +9,14 @@
 	--primary: #175442;
 	--primary-dark: #063427;
 	--secondary-light: #d7b87a;
-	--secondary-dark: #af8c4a; 
+	--secondary-dark: #af8c4a;
 }
 
 /*/////////////////		ANIMATIONS		//////////////////*/
 @keyframes fadeIn {
 	from {
 		opacity: 0;
-	} 
+	}
 	to {
 		opacity: 1;
 	}
@@ -24,40 +24,41 @@
 @keyframes fadeOut {
 	from {
 		opacity: 1;
-	} 
+	}
 	to {
 		opacity: 0;
 	}
 }
-.overlay {
-	background-color: rgb(0, 0, 0, 0.9);
-	z-index: 1;
-	display: none;
+#overlay {
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 10;
 }
-.overlay-open {
+.overlay-visible {
 	animation: fadeIn 1s ease;
+	width: 100vw;
 }
-.overlay-close {
+.overlay-hidden {
 	animation: fadeOut 2s ease;
+	width: 0;
 }
 #nav {
-	width: 70%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: -70%;
-	display: none;
-  }
+	left: -70vw;
+	width: 70vw;
+	z-index: 20;
+}
+#navMenu-close {
+	z-index: 2;
+}
 .nav-open {
 	z-index: 1;
-	transform: translateX(100%);
+	transform: translateX(70vw);
 	transition: transform 1s ease;
-  } 
+}
 .nav-close {
 	z-index: 1;
-	transform: translateX(0);
+	transform: translateX(0vw);
 	transition: transform 1s ease;
-  }
+}
 .cta-btn:hover {
 	background-color: var(--secondary-light);
 	color: var(--primary-light);

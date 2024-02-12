@@ -46,7 +46,7 @@ html,
   -o-tab-size: 4;
      tab-size: 4;
   /* 3 */
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
@@ -556,20 +556,16 @@ video {
   left: 0px;
 }
 
-.right-10 {
-  right: 2.5rem;
-}
-
-.right-3 {
-  right: 0.75rem;
+.right-4 {
+  right: 1rem;
 }
 
 .top-0 {
   top: 0px;
 }
 
-.top-10 {
-  top: 2.5rem;
+.top-4 {
+  top: 1rem;
 }
 
 .col-span-2 {
@@ -586,10 +582,6 @@ video {
 
 .m-2 {
   margin: 0.5rem;
-}
-
-.m-3 {
-  margin: 0.75rem;
 }
 
 .m-4 {
@@ -707,10 +699,6 @@ video {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .size-14 {
   width: 3.5rem;
   height: 3.5rem;
@@ -735,8 +723,8 @@ video {
   height: 0.25rem;
 }
 
-.h-1\/6 {
-  height: 16.666667%;
+.h-1\/5 {
+  height: 20%;
 }
 
 .h-2\/3 {
@@ -828,14 +816,6 @@ video {
   flex-direction: column;
 }
 
-.place-items-center {
-  place-items: center;
-}
-
-.content-center {
-  align-content: center;
-}
-
 .items-center {
   align-items: center;
 }
@@ -871,10 +851,6 @@ video {
 
 .self-center {
   align-self: center;
-}
-
-.overflow-x-hidden {
-  overflow-x: hidden;
 }
 
 .rounded-full {
@@ -941,8 +917,8 @@ video {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
-.stroke-secondary-light {
-  stroke: #d7b87a;
+.stroke-primary-dark {
+  stroke: #063427;
 }
 
 .object-cover {
@@ -1036,7 +1012,7 @@ video {
 }
 
 .font-sans {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Poppins, Helvetica, Arial, sans-serif;
 }
 
 .text-2xl {
@@ -1112,14 +1088,6 @@ video {
   color: rgb(215 184 122 / var(--tw-text-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
-.line-through {
-  text-decoration-line: line-through;
-}
-
 .shadow-black {
   --tw-shadow-color: #000;
   --tw-shadow: var(--tw-shadow-colored);
@@ -1163,38 +1131,40 @@ video {
   }
 }
 
-.overlay {
-  background-color: rgb(0, 0, 0, 0.9);
-  z-index: 1;
-  display: none;
+#overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
-.overlay-open {
+.overlay-visible {
   animation: fadeIn 1s ease;
+  width: 100vw;
 }
 
-.overlay-close {
+.overlay-hidden {
   animation: fadeOut 2s ease;
+  width: 0;
 }
 
 #nav {
-  width: 70%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: -70%;
-  display: none;
+  left: -70vw;
+  width: 70vw;
+  z-index: 20;
+}
+
+#navMenu-close {
+  z-index: 2;
 }
 
 .nav-open {
   z-index: 1;
-  transform: translateX(100%);
+  transform: translateX(70vw);
   transition: transform 1s ease;
 }
 
 .nav-close {
   z-index: 1;
-  transform: translateX(0);
+  transform: translateX(0vw);
   transition: transform 1s ease;
 }
 

@@ -1,6 +1,7 @@
 <?php require('partials/_head.php'); ?>
 
-<body class="overflow-x-hidden bg-slate-200 text-primary-dark font-sans">
+<body class="bg-slate-200 text-primary-dark font-sans relative">
+  <div id="overlay" class="overlay-hidden absolute top-0 left-0 h-screen w-screen"></div>
   <header class="bg-primary-dark border-b-2 border-secondary-dark h-min">
     <div class="flex pt-4 justify-between">
       <div class="mt-4 mx-4 text-secondary-dark">
@@ -14,35 +15,36 @@
         <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
       </div>
     </div>
-    <i id="navMenu-close" class="hidden stroke-secondary-light absolute top-10 right-10 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
+
     <form class="py-3 flex justify-center items-center" action="/products" method="GET">
       <input class="rounded-md p-2 w-10/12 tablet:w-8/12" type="text" id="header-search-field" name="header-search-field" placeholder="Search products">
     </form>
   </header>
-
-  <nav id="nav" class="absolute top-0 left-0 h-screen bg-secondary-dark flex nav-close">
-    <div class="flex flex-col h-1/6 py-4 bg-secondary-light">
-      <div id="user-login" class="flex justify-end me-3">
-        <a href="/signin">
-          <p class="self-center text-sm pe-2">Sign in</p>
-        </a>
-        <i data-feather="user"></i>
-      </div>
+  <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex flex-col">
+    <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
+    <div class="flex h-1/5 py-4 bg-secondary-light">
       <div class="p-4">
-        <p>Browse</p>
-        <p><strong>BitBuggy</strong></p>
+        <div id="user-login" class="flex justify-end me-3">
+          <i data-feather="user"></i>
+          <a href="/signin">
+            <p class="self-center text-sm pe-2">Sign in</p>
+          </a>
+        </div>
       </div>
     </div>
+
     <ul class="mx-4">
-      <li class="flex m-4">
-        <a href="/"><i class="size-5 mx-2" data-feather="home"></i>Home</a>
+      <li class="nav-links flex m-4">
+        <a href="/"><i class="size-5 mx-2" data-feather="home"></i></a>
+        <a href="/">Home</a>
       </li>
-      <li class="flex m-4">
-        <a href="/products"><i class="size-5 mx-2" data-feather="package"></i>Products</a>
+      <li class="nav-links flex m-4">
+        <a href="/products"><i class="size-5 mx-2" data-feather="package"></i></a>
+        <a href="/products">Products</a>
       </li>
-      <li class="flex m-4">
-        <a href="/signup"><i class="size-5 mx-2" data-feather="user-check"></i></a><a href="/signup">Become a
-          Member</a>
+      <li class="nav-links flex m-4">
+        <a href="/signup"><i class="size-5 mx-2" data-feather="user-check"></i></a>
+        <a href="/signup">Become a Member</a>
       </li>
     </ul>
   </nav>
