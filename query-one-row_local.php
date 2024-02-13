@@ -2,10 +2,11 @@
 require 'db/localdb.connection.php';
 require 'php-book/functions.php';
 
-$sql = "SELECT first_name, last_name FROM users WHERE id = 1;";
+$sql = "SELECT first_name, last_name FROM users WHERE user_id = 1;";
 
 $statement = $pdo->query($sql);
 $user = $statement->fetch();
+
 ?>
 
 <!DOCTYPE html>
