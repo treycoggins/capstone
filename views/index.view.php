@@ -8,7 +8,7 @@
         <img class="h-auto w-16 ms-5" src="../public/img/logo.png" alt="BitBuggy Logo" />
       </a>
     </div>
-    <div id="hamburger" class="flex order-3 flex-col p-6 cursor-pointer">
+    <div id="hamburger" class="flex flex-col p-6 cursor-pointer">
       <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
       <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
       <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
@@ -51,7 +51,7 @@
 
   <main class="relative">
     <section class="">
-      <h2 class="text-secondary-dark font-display text-6xl ms-4">Hot Deals</h2>
+      <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
       <div class="flex justify-center h-full">
         <img class="rounded-md w-11/12 h-2/3" src="../public/img/apple-products.jpg" alt="apple products">
       </div>
@@ -147,6 +147,7 @@
     feather.replace();
   </script>
   <script src="../public/js/index.js"></script>
+  <script src="../public/js/buttons.js"></script>
 </body>
 
 </html>

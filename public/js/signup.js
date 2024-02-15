@@ -109,13 +109,14 @@
 //   // 	return isValid;
 //   // };
 
-//   signUpForm.addEventListener("submit", (event) => {
-//     // prevent form from submitting
-//     event.preventDefault();
+  signUpForm.addEventListener("submit", (event) => {
+    // prevent form from submitting
+    event.preventDefault();
 
-//     if (verifyFormValues()) {
-//       signUpForm.submit();
-//       window.location.replace("/signup-success");
-//     }
-//   });
+    // if (verifyFormValues()) {
+    //   signUpForm.submit();
+    //   window.location.replace("/signup-success");
+    // }
+  });
 // });
+
