@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss build -i ./src/main.css -o ./public/css/styles.css --watch"
+    "build": "tailwindcss -i ./src/main.css -o ./public/css/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,14 @@
   },
   "homepage": "https://github.com/treycoggins/capstone#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss-import": "^16.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
-    "feather-icons": "^4.29.1"
+    "feather-icons": "^4.29.1",
+    "nodemon": "^3.0.3"
   }
 }

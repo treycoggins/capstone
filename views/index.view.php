@@ -1,23 +1,23 @@
 <?php require('partials/_head.php'); ?>
 
-<body class="bg-slate-200 text-primary-dark font-sans relative">
+<body class="bg-bg-light text-primary font-sans relative">
   <div id="overlay" class="overlay-hidden absolute top-0 left-0 h-screen w-screen"></div>
-  <header class="bg-primary-dark border-b-2 border-secondary-dark h-min">
-    <div class="flex pt-4 justify-between">
-      <div class="mt-4 mx-4 text-secondary-dark">
-        <a href="/">
-          <img class="h-auto w-20" src="../public/img/logo.png" alt="BitBuggy Logo" />
-        </a>
-      </div>
-      <div id="hamburger" class="flex flex-col p-6 cursor-pointer">
-        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
-        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
-        <div class="bar h-1 w-9 bg-primary m-1 rounded-md"></div>
-      </div>
+  <header class="bg-primary border-b-2 border-secondary-dark h-min laptop:max-w-full flex flex-wrap pt-4 justify-between">
+    <div class="mt-4 mx-4 shrink-0 text-secondary-dark">
+      <a href="/">
+        <img class="h-auto w-16 ms-5" src="../public/img/logo.png" alt="BitBuggy Logo" />
+      </a>
     </div>
-
-    <form class="py-3 flex justify-center items-center" action="/products" method="GET">
-      <input class="rounded-md p-2 w-10/12 tablet:w-8/12" type="text" id="header-search-field" name="header-search-field" placeholder="Search products">
+    <div id="hamburger" class="flex order-3 flex-col p-6 cursor-pointer">
+      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
+      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
+      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
+    </div>
+    <form class="py-3 order-2 flex w-7/12 shrink justify-center items-center mx-4 tablet:w-5/12 laptop:w-3/12 laptop:justify-end laptop:order-3" action="/products" method="GET">
+      <input class="rounded-md p-2 w-full type=" text" id="header-search-field" name="header-search-field" placeholder="Search products">
+      <button type="submit" class="relative">
+        <i class="size-6 text-slate-800 absolute top-[-10px] right-[10px]" data-feather="search"></i>
+      </button>
     </form>
   </header>
   <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex flex-col">
@@ -51,16 +51,16 @@
 
   <main class="relative">
     <section class="">
-      <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
+      <h2 class="text-secondary-dark font-display text-6xl ms-4">Hot Deals</h2>
       <div class="flex justify-center h-full">
         <img class="rounded-md w-11/12 h-2/3" src="../public/img/apple-products.jpg" alt="apple products">
       </div>
     </section>
 
     <section class="text-center my-4 relative">
-      <h2 class="text-4xl m-1">Become a member for extra savings and benefits!</h2>
-      <button class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
-        up now!</button>
+      <h2 class="text-4xl mb-10  m-1">Become a member for extra savings and benefits!</h2>
+      <a href="/signup" class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
+        up now!</a>
       <div class="h-full flex flex-col tablet:flex-row justify-center items-center">
         <div class="card flex flex-col tablet:mx-10 justify-center items-center">
           <i data-feather="truck" class="size-14"></i>
