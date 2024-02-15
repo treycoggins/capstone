@@ -4,7 +4,4 @@ node_modules/
 .vscode/
 vendor/
 *.log
-.env
-tailwind.config.js
-prettier.config.js
-gulpfile.js
+.env:
