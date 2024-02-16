@@ -30,5 +30,4 @@ module.exports = {
       tv: "1536px",
     },
   },
-  plugins: [],
 };
