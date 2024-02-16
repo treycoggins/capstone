@@ -84,7 +84,6 @@
 .cta-btn:not(:hover) {
   transition: 1s ease;
 }
-
 .fade-after-click {
 	background-color: var(--primary);
 	transition: background-color 1s ease;

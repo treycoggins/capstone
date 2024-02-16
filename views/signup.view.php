@@ -1,7 +1,7 @@
 <?php require('partials/_head.php'); ?>
 
-<body id="signup-body" class="bg-bg-secondary-light font-sans flex flex-col h-screen justify-between">
-  <header class="border-b-2 border-secondary-dark text-primary flex h-min">
+<body class="bg-bg-light font-sans h-screen flex flex-col">
+  <header class="border-b-2 border-secondary-dark text-primary h-min">
     <div class="bg-primary w-screen h-min py-6">
       <a href="/"><img class="h-auto w-16 ms-5" src="../public/img/logo.png" alt="BitBuggy logo"></a>
     </div>

@@ -1,6 +1,6 @@
 /** @config {./tailwindcss.config.js} */
 module.exports = {
-  content: ["./views/**/*.{html,php,js}", "./src/**/*.{html,css,js}"],
+  content: ["./views/**/*.{html,php,js}", "./src/**/*.{html,css,scss,js}"],
   theme: {
     fontFamily: {
       sans: ["Poppins", "Helvetica", "Arial", "sans-serif"],

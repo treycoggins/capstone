@@ -20,40 +20,30 @@
       <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
     </div>
   </header>
-  <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex flex-col">
-    <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
-    <div class="flex h-1/5 py-4 bg-secondary-light">
-      <div class="p-4">
-        <div id="user-login" class="flex justify-end me-3">
-          <i data-feather="user"></i>
-          <a href="/signin">
-            <p class="self-center text-sm pe-2">Sign in</p>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <ul class="mx-4">
-      <li class="nav-links flex m-4">
-        <a href="/"><i class="size-5 mx-2" data-feather="home"></i></a>
-        <a href="/">Home</a>
-      </li>
-      <li class="nav-links flex m-4">
-        <a href="/products"><i class="size-5 mx-2" data-feather="package"></i></a>
-        <a href="/products">Products</a>
-      </li>
-      <li class="nav-links flex m-4">
-        <a href="/signup"><i class="size-5 mx-2" data-feather="user-check"></i></a>
-        <a href="/signup">Become a Member</a>
-      </li>
-    </ul>
-  </nav>
+  <?php require("partials/_nav.php") ?>
 
   <main class="relative">
-    <section class="">
-      <h2 class="text-secondary-dark font-display text-6xl ms-4">Top Deals</h2>
-      <div class="flex justify-center h-full">
-        <img class="rounded-md w-11/12 h-2/3" src="../public/img/apple-products.jpg" alt="apple products">
+    <section class="m-4">
+      <h1 class="text-4xl font-display text-secondary-dark text-center m-4">Welcome to BitBuggy</h1>
+      <a href="/product" class="text-3xl">Browse All Products</a>
+      <p class="text-xl">or</p>
+      <p class="text-2xl">Select from:</p>
+    </section>
+
+    <section class="relative">
+      <div class="grid gap-x-4 gap-y-10 grid-cols-2 grid-rows-2 text-center p-3">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone-toss.jpg" alt="electronics">
+          <p>Electronics</p>
+        </div>
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/fashion2.jpg" alt="fashion model">
+          <p>Fashion</p>
+        </div>
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty-face.jpg" alt="beauty products">
+          <p>Beauty</p>
+        </div>
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen2.jpg" alt="home goods">
+          <p>Home Goods</p>
+        </div>
       </div>
     </section>
 
@@ -84,24 +74,6 @@
       </div>
     </section>
 
-    <section class="relative">
-      <h2 class="font-display text-5xl ps-4 py-6 my-12">Categories</h2>
-      <div class="grid gap-x-4 gap-y-10 grid-cols-2 grid-rows-2 text-center p-3">
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone-toss.jpg" alt="electronics">
-          <p>Electronics</p>
-        </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/fashion2.jpg" alt="fashion model">
-          <p>Fashion</p>
-        </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty-face.jpg" alt="beauty products">
-          <p>Beauty</p>
-        </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen2.jpg" alt="home goods">
-          <p>Home Goods</p>
-        </div>
-      </div>
-    </section>
-
     <section class="relative bg-primary-dark w-full pb-12">
       <h2 class="font-display text-secondary-dark text-6xl ps-4 py-6 my-12">Top Picks</h2>
       <div class="top-picks-grid m-1 grid grid-col-2 auto-rows-auto gap-2">
@@ -117,21 +89,9 @@
       </div>
     </section>
 
-    <section class="mt-12 bg-secondary-dark w-full">
+    <section class="relative mt-12 bg-secondary-dark w-full">
       <h2 class="text-5xl font-display ps-4 py-6 my-12">Buy Again</h2>
       <div class="flex flex-col mb-10">
-        <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
-          <p>Insert Item Here</p>
-        </div>
-        <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
-          <p>Insert Item Here</p>
-        </div>
-        <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
-          <p>Insert Item Here</p>
-        </div>
-        <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
-          <p>Insert Item Here</p>
-        </div>
         <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">
           <p>Insert Item Here</p>
         </div>

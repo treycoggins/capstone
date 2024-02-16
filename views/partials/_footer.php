@@ -1,5 +1,5 @@
-<footer class="grid grid-cols-2 bg-primary border-t-2 text-secondary-dark border-secondary-dark shrink-0 text-lg w-screen py-6">
-  <div class="m-2 ms-6 flex flex-col justify-around h-full">
+<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-lg w-screen py-4">
+  <div class="m-4">
     <p class="hover:text-secondary-light">Your Orders</p>
     <p class="hover:text-secondary-light">Your Account</p>
     <p class="hover:text-secondary-light">Your Lists</p>
