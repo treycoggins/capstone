@@ -1,4 +1,3 @@
-
 <?php
 require('db/localdb.connection.php');
 require('db/functions.php');
@@ -8,7 +7,7 @@ $sql = "SELECT * FROM products;";
 $statement = $pdo->query($sql);
 $products = $statement->fetchAll();
 
-if(!$products) {
+if (!$products) {
   include("views.404.php");
 }
 

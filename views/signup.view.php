@@ -16,7 +16,7 @@
   <main class="pt-12 pb-12 grow">
     <section class="border-secondary-dark border w-10/12 tablet:w-3/12 m-auto p-2">
       <small class="text-secondary-dark">New to BitBuggy?</small>
-      <p class="shrink-text font-bold text-primary-light m-0">Create an Account.</>
+      <p class="font-bold text-primary-light m-0">Create an Account.</>
       <form id="signup-form" class="flex flex-col text-sm my-1" action="/signup" method="POST">
         <input id="fname" name="first_name" type="text" class="input-field m-2 rounded-md text-gray-300  text-sm border-bg-dark border w-11/12 p-1" placeholder="First Name">
         <span id="fname-error" class="text-sm mx-4 input-error"></span>

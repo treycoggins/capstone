@@ -1,7 +1,7 @@
 <?php
 $type = "mysql";
 $host = "127.0.0.1";
-$port = "6900";
+$port = "5522";
 $dbname = "surfnoqi_bbdb";
 $charset = "utf8mb4";
 

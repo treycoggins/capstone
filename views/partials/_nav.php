@@ -1,4 +1,3 @@
-
 <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex flex-col">
   <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class=" h-1/5 py-4 bg-secondary-light">

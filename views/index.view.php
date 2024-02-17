@@ -1,4 +1,3 @@
-
 <?php require('partials/_head.php'); ?>
 
 <body class="bg-bg-light text-primary font-sans relative">

@@ -1,4 +1,3 @@
-<?php sleep(1) ?>
 <?php require("views/partials/_head.php") ?>
 
 <body class="bg-slate-200 text-primary font-sans w-full h-screen flex flex-col justify-center items-center">

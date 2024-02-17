@@ -1,4 +1,10 @@
-RewriteEngine On
+# Disable directory browsing
+Options -Indexes
 
-AddType image/png .png
-AddType text/js .js
+# Set the default page
+DirectoryIndex index.html index.php
+
+# Redirect www to non-www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.capstone\.local [NC]
+RewriteRule ^(.*)$ http://capstone.local/$1 [L,R=301]
