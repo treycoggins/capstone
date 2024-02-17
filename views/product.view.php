@@ -2,7 +2,7 @@
 require('db/localdb.connection.php');
 require('db/functions.php');
 
-$sql = "SELECT * FROM products WHERE product_id = 17;";
+$sql = "SELECT * FROM products;";
 
 $statement = $pdo->query($sql);
 $products = $statement->fetchAll();
@@ -36,13 +36,16 @@ $products = $statement->fetchAll();
   <main class="relative">
     <section class="m-6">
       <?php foreach ($products as $product) { ?>
-      <div class="pb-8">
-        <img src="../public/img/blushes.jpg" alt="product image" class="w-screen h-auto">
-        <h3 class=""><?= html_escape($product['product_name']) ?></h3>
-        <p class="text-xs m-6"><?= html_escape($product['description']) ?></p>
-        <p class="">$<?= html_escape($product['price']) ?></p>
-      </div>
-      <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-20 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
+        <div class="pb-8 border-2 border-bg-dark p-4 my-10">
+          <img src="<?= html_escape($product['file_path']) . html_escape($product['file_name']); ?>" alt="product image" class="w-60 h-auto mb-4">
+          <h3 class=""><?= html_escape($product['product_name']) ?></h3>
+          <p class="text-xs m-2"><?= html_escape($product['description']) ?></p>
+          <p class="">$<?= html_escape($product['price']) ?></p>
+          <div class="flex justify-end">
+            <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
+          </div>
+        </div>
+      <?php }; ?>
     </section>
 
     <section class="mt-12 bg-secondary-dark w-full">
