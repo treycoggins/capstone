@@ -23,31 +23,31 @@
   <?php require("partials/_nav.php") ?>
 
   <main class="relative">
-    <section class="m-4">
+    <section id="section-browse" class="m-4">
       <h1 class="text-4xl font-display text-secondary-dark text-center m-4">Welcome to BitBuggy</h1>
       <a href="/product" class="text-3xl">Browse All Products</a>
       <p class="text-xl">or</p>
       <p class="text-2xl">Select from:</p>
     </section>
 
-    <section class="relative">
+    <section id="section-categories">
       <div class="grid gap-x-4 gap-y-10 grid-cols-2 grid-rows-2 text-center p-3">
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone-toss.jpg" alt="electronics">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone_toss.jpg" alt="electronics">
           <p>Electronics</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/fashion2.jpg" alt="fashion model">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/black_dress.jpg" alt="fashion model">
           <p>Fashion</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty-face.jpg" alt="beauty products">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty_face.jpg" alt="beauty products">
           <p>Beauty</p>
         </div>
-        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen2.jpg" alt="home goods">
+        <div class="text-xl flex flex-col"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen_table.jpg" alt="home goods">
           <p>Home Goods</p>
         </div>
       </div>
     </section>
 
-    <section class="text-center my-4 relative">
+    <section id="section-members" class="text-center my-4 relative">
       <h2 class="text-4xl mb-10  m-1">Become a member for extra savings and benefits!</h2>
       <a href="/signup" class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
         up now!</a>
@@ -74,22 +74,7 @@
       </div>
     </section>
 
-    <section class="relative bg-primary-dark w-full pb-12">
-      <h2 class="font-display text-secondary-dark text-6xl ps-4 py-6 my-12">Top Picks</h2>
-      <div class="top-picks-grid m-1 grid grid-col-2 auto-rows-auto gap-2">
-        <div class="*:max-w-none"><img class="h-full w-full" src="../public/img/galaxy21.jpg" alt="samsung galaxy 21"></div>
-        <div class=""><img src="../public/img/sonybuds.jpg" alt="sony earbuds"></div>
-        <div class="col-span-2">
-          <img src="../public/img/airpods.jpg" alt="apple airpods">
-        </div>
-        <div class=""><img src="../public/img/fashion.jpg" alt="woman on the beach"></div>
-        <div class=""><img src="../public/img/kitchen.jpg" alt="chopping vegetables in the kitchen">
-        </div>
-        <div class="col-span-2"><img src="../public/img/camera.jpg" alt="two cameras"></div>
-      </div>
-    </section>
-
-    <section class="relative mt-12 bg-secondary-dark w-full">
+    <section id="section-buy-again" class="relative mt-12 bg-secondary-dark w-full">
       <h2 class="text-5xl font-display ps-4 py-6 my-12">Buy Again</h2>
       <div class="flex flex-col mb-10">
         <div class="border-primary-dark border-2 p-20 mx-20 my-4 h-full w-auto rounded-md">

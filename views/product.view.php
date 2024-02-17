@@ -5,7 +5,7 @@ require('db/functions.php');
 $sql = "SELECT * FROM products WHERE product_id = 17;";
 
 $statement = $pdo->query($sql);
-$product = $statement->fetch();
+$products = $statement->fetchAll();
 
 ?>
 
@@ -35,6 +35,7 @@ $product = $statement->fetch();
 
   <main class="relative">
     <section class="m-6">
+      <?php foreach ($products as $product) { ?>
       <div class="pb-8">
         <img src="../public/img/blushes.jpg" alt="product image" class="w-screen h-auto">
         <h3 class=""><?= html_escape($product['product_name']) ?></h3>
