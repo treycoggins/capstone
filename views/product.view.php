@@ -1,3 +1,4 @@
+
 <?php
 require('db/localdb.connection.php');
 require('db/functions.php');
@@ -7,37 +8,23 @@ $sql = "SELECT * FROM products;";
 $statement = $pdo->query($sql);
 $products = $statement->fetchAll();
 
+if(!$products) {
+  include("views.404.php");
+}
+
 ?>
 
 <?php require('partials/_head.php'); ?>
 
 <body class="bg-bg-light text-primary font-sans relative">
-  <header class="bg-primary border-b-2 border-secondary-dark h-min laptop:w-full flex flex-wrap pt-4 justify-between">
-    <div class="mt-4 mx-4 text-secondary-dark tablet:grow">
-      <a href="/">
-        <img class="h-auto shrink-0 w-16 ms-5" src="../public/img/logo.png" alt="BitBuggy Logo" />
-      </a>
-    </div>
-    <form class="py-3 flex w-10/12 justify-end items-center grow mx-4 order-3 tablet:order-2 tablet:w-1/3 tablet:grow-0" action="/products" method="GET">
-      <input class="rounded-md p-2 w-full" type="text" name="header-search-field" placeholder="Search products">
-      <button type="submit" class="relative">
-        <i class="size-6 text-slate-800 absolute top-[-14px] right-[10px]" data-feather="search"></i>
-      </button>
-    </form>
-    <div id="hamburger" class="flex flex-col p-6 cursor-pointer tablet:order-2">
-      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
-      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
-      <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
-    </div>
-  </header>
-
+  <?php require("partials/_header.php") ?>
   <?php require("partials/_nav.php") ?>
 
   <main class="relative">
     <section class="m-6">
       <?php foreach ($products as $product) { ?>
         <div class="pb-8 border-2 border-bg-dark p-4 my-10">
-          <img src="<?= html_escape($product['file_path']) . html_escape($product['file_name']); ?>" alt="product image" class="w-60 h-auto mb-4">
+          <img src="<?= $product['file_path'] . $product['file_name']; ?>" alt="product image" class="w-60 h-auto mb-4">
           <h3 class=""><?= html_escape($product['product_name']) ?></h3>
           <p class="text-xs m-2"><?= html_escape($product['description']) ?></p>
           <p class="">$<?= html_escape($product['price']) ?></p>

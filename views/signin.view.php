@@ -1,7 +1,8 @@
+
 <?php require("partials/_head.php"); ?>
 
 <body class="bg-bg-light text-secondary-dark font-sans min-h-screen flex flex-col">
-  <header class="bg-primary border-b-4 border-secondary-dark">
+  <header class="bg-primary text-secondary-dark border-b-4 border-secondary-dark">
     <div class="py-6">
       <a class="ms-2" href="/">
         <i class="inline size-8 align-middle" data-feather="arrow-left"></i>

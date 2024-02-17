@@ -1,9 +1,15 @@
+
 <?php require('partials/_head.php'); ?>
 
 <body class="bg-bg-light font-sans h-screen flex flex-col">
-  <header class="border-b-2 border-secondary-dark text-primary h-min">
-    <div class="bg-primary w-screen h-min py-6">
-      <a href="/"><img class="h-auto w-16 ms-5" src="../public/img/logo.png" alt="BitBuggy logo"></a>
+  <header class="bg-primary text-secondary-dark border-b-4 border-secondary-dark">
+    <div class="py-6">
+      <a class="ms-2" href="/">
+        <i class="inline size-8 align-middle" data-feather="arrow-left"></i>
+      </a>
+      <a href="/">
+        <p class="inline font-bold text-xl ms-2 align-middle">BitBuggy</p>
+      </a>
     </div>
   </header>
 
