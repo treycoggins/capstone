@@ -1,8 +1,8 @@
 <?php
-require('db/localdb.connection.php');
-require('db/functions.php');
+require('../db/localdb.connection.php');
+require 'php-book/functions.php';
 
-$sql = "SELECT * FROM products WHERE product_id = 17;";
+$sql = "SELECT product_name FROM products WHERE product_id = 17;";
 
 $statement = $pdo->query($sql);
 $product = $statement->fetch();
@@ -30,18 +30,17 @@ $product = $statement->fetch();
       <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
     </div>
   </header>
-
+  
   <?php require("partials/_nav.php") ?>
 
   <main class="relative">
-    <section class="m-6">
-      <div class="pb-8">
-        <img src="../public/img/blushes.jpg" alt="product image" class="w-screen h-auto">
+    <section class="relative m-6">
+      <img src="../public/img/blushes.jpg" alt="product image" class="w-screen h-auto">
+      <div class="">
         <h3 class=""><?= html_escape($product['product_name']) ?></h3>
-        <p class="text-xs m-6"><?= html_escape($product['description']) ?></p>
-        <p class="">$<?= html_escape($product['price']) ?></p>
+        <p class="text-xs m-6">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum provident in, harum quaerat corporis, dicta saepe dolores consequatur velit tenetur amet, recusandae unde eos reprehenderit!</p>
+        <p>Price</p>
       </div>
-      <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-20 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
     </section>
 
     <section class="mt-12 bg-secondary-dark w-full">

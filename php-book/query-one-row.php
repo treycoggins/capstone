@@ -1,3 +1,6 @@
+<?php require('../db/localdb.connection.php') ?>
+<?php require('../db/functions.php') ?>
+
 <?php
 require 'db/db.connection.php';
 require 'php-book/functions.php';
