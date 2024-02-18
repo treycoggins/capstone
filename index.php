@@ -10,6 +10,8 @@ $routes = [
     "/product" => "controllers/product.php",
     "/about" => "controllers/about.php",
     "/contact" => "controllers/contact.php",
+    "/list" =>  "controllers/list.php",
+    "/account" => "controllers/account.php",
 ];
 
 if (array_key_exists($uri, $routes)) {

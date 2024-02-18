@@ -1,20 +1,3 @@
-<?php
-
-declare(strict_types=1);
-require("Database.php");
-
-$config = require("config.php");
-$db = new Database($config);
-
-$id = $_GET['id'];
-$query = "SELECT * FROM products WHERE product_id = :id;";
-
-$products = $db->query($query, ['id' => $id])->fetchAll();
-
-?>
-
-
-
 <?php require('partials/_head.php'); ?>
 </head>
 
