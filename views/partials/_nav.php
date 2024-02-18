@@ -45,7 +45,7 @@
     </li>
     <li class="nav-links flex ms-4 my-8">
       <a href="/contact"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
-      <a href="/contact">Your Account</a>
+      <a href="/contact">Your Orders</a>
     </li>
     
 

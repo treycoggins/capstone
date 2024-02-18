@@ -1,8 +1,8 @@
-<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md w-screen py-4">
+<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md h-full w-screen py-4">
   <div class="m-4">
-    <p class="hover:text-secondary-light">Your Orders</p>
-    <p class="hover:text-secondary-light">Your Account</p>
-    <p class="hover:text-secondary-light">Your Lists</p>
+    <p class="hover:text-secondary-light p-1.5">Your Account</p>
+    <p class="hover:text-secondary-light p-1.5">Your Lists</p>
+    <p class="hover:text-secondary-light p-1.5">Your Orders</p>
   </div>
   <div class="flex flex-col h-full justify-center items-start">
     <div class="flex hover:text-secondary-light mb-4">
