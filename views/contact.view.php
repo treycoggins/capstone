@@ -1,4 +1,3 @@
-
 <?php require("views/partials/_head.php") ?>
 
 <body class="bg-slate-200 text-primary font-sans w-full h-screen flex flex-col justify-center items-center">
@@ -30,7 +29,7 @@
   <script>
     feather.replace();
   </script>
-  <script src=" ../public/js/home.js">
+  <script src=" ../public/js/index.js">
   </script>
 </body>
 

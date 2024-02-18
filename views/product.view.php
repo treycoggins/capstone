@@ -1,15 +1,10 @@
 <?php
-require('db/localdb.connection.php');
-require('db/functions.php');
+require("Database.php");
+$config = require("config.php");
 
-$sql = "SELECT * FROM products;";
+$db = new Database($config);
+$products = $db->query("SELECT * FROM products")->fetchAll();
 
-$statement = $pdo->query($sql);
-$products = $statement->fetchAll();
-
-if (!$products) {
-  include("views.404.php");
-}
 
 ?>
 
@@ -24,9 +19,9 @@ if (!$products) {
       <?php foreach ($products as $product) { ?>
         <div class="pb-8 border-2 border-bg-dark p-4 my-10">
           <img src="<?= $product['file_path'] . $product['file_name']; ?>" alt="product image" class="w-60 h-auto mb-4">
-          <h3 class=""><?= html_escape($product['product_name']) ?></h3>
-          <p class="text-xs m-2"><?= html_escape($product['description']) ?></p>
-          <p class="">$<?= html_escape($product['price']) ?></p>
+          <h3 class=""><?= $product['product_name']; ?></h3>
+          <p class="text-xs m-2"><?= $product['description']; ?></p>
+          <p class="">$<?= $product['price']; ?></p>
           <div class="flex justify-end">
             <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
           </div>

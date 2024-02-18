@@ -29,7 +29,7 @@
   <script>
     feather.replace();
   </script>
-  <script src=" ../public/js/home.js">
+  <script src=" ../public/js/index.js">
   </script>
 </body>
 
