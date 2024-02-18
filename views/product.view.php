@@ -1,14 +1,22 @@
 <?php
+
+declare(strict_types=1);
 require("Database.php");
+
 $config = require("config.php");
-
 $db = new Database($config);
-$products = $db->query("SELECT * FROM products")->fetchAll();
 
+$id = $_GET['id'];
+$query = "SELECT * FROM products WHERE product_id = :id;";
+
+$products = $db->query($query, ['id' => $id])->fetchAll();
 
 ?>
 
+
+
 <?php require('partials/_head.php'); ?>
+</head>
 
 <body class="bg-bg-light text-primary font-sans relative">
   <?php require("partials/_header.php") ?>
@@ -41,13 +49,3 @@ $products = $db->query("SELECT * FROM products")->fetchAll();
 
 
   <?php require('partials/_footer.php'); ?>
-
-
-  <script>
-    feather.replace();
-  </script>
-  <script src="../public/js/index.js"></script>
-  <script src="../public/js/buttons.js"></script>
-</body>
-
-</html>

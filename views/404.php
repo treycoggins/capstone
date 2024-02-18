@@ -1,15 +1,8 @@
 <?php require("views/partials/_head.php") ?>
 
 <body class="bg-slate-200 font-sans w-full h-screen flex flex-col justify-center items-center">
-    <header class="bg-primary border-b-4 border-secondary-dark text-primary-dark w-screen">
-        <div class="flex p-6 justify-between">
-            <div class="m-auto text-secondary-dark">
-                <a href="/">
-                    <img src="../public/img/logo.png" alt="BitBuggy Logo" class="h-32 w-40" />
-                </a>
-            </div>
-        </div>
-    </header>
+    <?php require("partials/_header.php") ?>
+    <?php require("partials/_nav.php") ?>
 
     <main class="flex justify-center items-center text-center w-screen grow">
         <a href="/">
@@ -21,14 +14,4 @@
             </p>
         </a>
     </main>
-    <footer class="bg-primary border-t-4 border-secondary-dark text-lg w-screen py-6">
-        <div class="m-2 flex flex-col h-full justify-around items-center"></div>
-    </footer>
-    <script>
-        feather.replace();
-    </script>
-    <script src=" ../public/js/index.js">
-    </script>
-</body>
-
-</html>
+    <?php require("partials/_footer.php") ?>

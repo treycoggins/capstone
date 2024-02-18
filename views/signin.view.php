@@ -1,18 +1,9 @@
-
 <?php require("partials/_head.php"); ?>
+</head>
 
 <body class="bg-bg-light text-secondary-dark font-sans min-h-screen flex flex-col">
-  <header class="bg-primary text-secondary-dark border-b-4 border-secondary-dark">
-    <div class="py-6">
-      <a class="ms-2" href="/">
-        <i class="inline size-8 align-middle" data-feather="arrow-left"></i>
-      </a>
-      <a href="/">
-        <p class="inline font-bold text-xl ms-2 align-middle">BitBuggy</p>
-      </a>
-    </div>
-  </header>
-
+<?php require("partials/_header.php") ?>
+<?php require("partials/_nav.php") ?>
   <main class="mx-4 pt-4 pb-16 grow">
     <h1 class="text-2xl py-4 ps-3">Welcome</h1>
     <p class="text-lg mb-2">New to BitBuggy?</p>
@@ -34,10 +25,3 @@
 
 
   <?php require("partials/_footer.php"); ?>
-  <script src="../public/js/signup.js"></script>
-  <script>
-    feather.replace();
-  </script>
-</body>
-
-</html>

@@ -76,6 +76,9 @@
   }
 
 /*//////////////////	BUTTONS		/////////////////////////*/
+.btn {
+  
+}
 .cta-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);

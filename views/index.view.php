@@ -1,7 +1,6 @@
 <?php require('partials/_head.php'); ?>
 
 <body class="bg-bg-light text-primary font-sans relative">
-  <div id="overlay" class="overlay-hidden absolute top-0 left-0 h-screen w-screen"></div>
   <?php require("partials/_header.php") ?>
   <?php require("partials/_nav.php") ?>
 
@@ -69,13 +68,3 @@
 
 
   <?php require('partials/_footer.php'); ?>
-
-
-  <script>
-    feather.replace();
-  </script>
-  <script src="../public/js/index.js"></script>
-  <script src="../public/js/buttons.js"></script>
-</body>
-
-</html>

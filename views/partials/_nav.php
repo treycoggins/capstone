@@ -1,4 +1,4 @@
-<nav id="nav" class="absolute top-0 h-screen bg-secondary-dark flex flex-col">
+<nav id="nav" class="absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
   <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class=" h-1/5 py-4 bg-secondary-light">
     <div class="flex p-4">
@@ -28,13 +28,26 @@
       <a href="/product">Products</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
+      <a href="/contact"><i class="size-5 mx-2" data-feather="at-sign"></i></a>
+      <a href="/contact">Contact</a>
+    </li>
+    <li class="nav-links flex ms-4 my-8">
       <a href="/signup"><i class="size-5 mx-2" data-feather="user-check"></i></a>
       <a href="/signup">Become a Member</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
-      <a href="/contact"><i class="size-5 mx-2" data-feather="at-sign"></i></a>
-      <a href="/contact">Contact</a>
+      <a href="/contact"><i class="size-5 mx-2" data-feather="bookmark"></i></a>
+      <a href="/contact">Your Account</a>
     </li>
+    <li class="nav-links flex ms-4 my-8">
+      <a href="/contact"><i class="size-5 mx-2" data-feather="gift"></i></a>
+      <a href="/contact">Your Lists</a>
+    </li>
+    <li class="nav-links flex ms-4 my-8">
+      <a href="/contact"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
+      <a href="/contact">Your Account</a>
+    </li>
+    
 
   </ul>
 </nav>

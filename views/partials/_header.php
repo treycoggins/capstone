@@ -1,4 +1,5 @@
-<header class="bg-primary border-b-2 border-secondary-dark h-min laptop:w-full flex flex-wrap pt-4 justify-between">
+<div id="overlay" class="overlay-hidden absolute top-0 left-0 h-screen w-screen"></div>
+<header class="bg-primary border-b-4 border-secondary-dark h-min laptop:w-full flex flex-wrap pt-4 justify-between">
   <div class="mt-4 mx-4 text-secondary-dark tablet:grow">
     <a href="/">
       <img class="h-auto shrink-0 w-20 ms-4 mb-4" src="../public/img/logo.png" alt="BitBuggy Logo" />

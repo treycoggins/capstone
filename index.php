@@ -9,7 +9,7 @@ $routes = [
     "/signin" => "controllers/signin.php",
     "/product" => "controllers/product.php",
     "/about" => "controllers/about.php",
-    "/contact" => "controllers/contact.php"
+    "/contact" => "controllers/contact.php",
 ];
 
 if (array_key_exists($uri, $routes)) {
