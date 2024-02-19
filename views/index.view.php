@@ -1,3 +1,5 @@
+<?php var_dump($_SERVER) ?>
+
 <?php require('partials/_head.php'); ?>
 
 <body class="bg-bg-light text-primary font-sans relative">
@@ -7,7 +9,7 @@
   <main class="relative">
     <section id="section-browse" class="m-4">
       <h1 class="text-4xl font-display text-secondary-dark text-center m-4">Welcome to BitBuggy</h1>
-      <a href="/product" class="text-3xl">Browse All Products</a>
+      <a href="/product" class="text-3xl">See All Products</a>
       <p class="text-xl">or</p>
       <p class="text-2xl">Select from:</p>
     </section>

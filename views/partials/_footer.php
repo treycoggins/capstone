@@ -1,4 +1,4 @@
-<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md h-full w-screen py-4">
+<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md min-h-lvh w-screen py-4">
   <div class="m-4">
     <p class="hover:text-secondary-light p-1.5">Your Account</p>
     <p class="hover:text-secondary-light p-1.5">Your Lists</p>
