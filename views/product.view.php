@@ -1,3 +1,5 @@
+
+
 <?php require('partials/_head.php'); ?>
 </head>
 

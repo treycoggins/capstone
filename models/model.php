@@ -4,10 +4,8 @@ function connectToDatabase()
 {
     require('db/functions.php');
 
-    
     // create the DSN variables
     $type = "mysql";
-   // $host = $server_ip;
     $host = "127.0.0.1";
     $port = "3306";
     $dbname = "surfnoqi_bbdb";
