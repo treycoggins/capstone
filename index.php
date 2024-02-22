@@ -1,8 +1,5 @@
 
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 require 'includes/functions.php';
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
