@@ -16,8 +16,8 @@
   </div>
   <ul class="mx-4">
     <li class="nav-links flex ms-4 my-8">
-      <a href="/"><i class="size-5 mx-2" data-feather="home"></i></a>
-      <a href="/">Home</a>
+      <a href="/home"><i class="size-5 mx-2" data-feather="home"></i></a>
+      <a href="/home">Home</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
       <a href="/about"><i class="size-5 mx-2" data-feather="book-open"></i></a>
@@ -36,16 +36,16 @@
       <a href="/signup">Become a Member</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
-      <a href="/contact"><i class="size-5 mx-2" data-feather="bookmark"></i></a>
-      <a href="/contact">Your Account</a>
+      <a href="/account"><i class="size-5 mx-2" data-feather="bookmark"></i></a>
+      <a href="/account">Your Account</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
-      <a href="/contact"><i class="size-5 mx-2" data-feather="gift"></i></a>
-      <a href="/contact">Your Lists</a>
+      <a href="/list"><i class="size-5 mx-2" data-feather="gift"></i></a>
+      <a href="/list">Your Lists</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
-      <a href="/contact"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
-      <a href="/contact">Your Orders</a>
+      <a href="/orders"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
+      <a href="/orders">Your Orders</a>
     </li>
     
 

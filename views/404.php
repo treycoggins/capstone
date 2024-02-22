@@ -7,8 +7,8 @@
     <main class="flex justify-center items-center text-center w-screen grow">
         <a href="/">
             <p class="text-9xl text-slate-500">404</p>
-            <h1 class="text-primary font-bold inline">The page you requested was not found.</h1>
-            <p class="text-primary">Please return to the home page.
+            <h1 class="font-bold inline">The page you requested was not found.</h1>
+            <p class="">Please return to the home page.
                 <i data-feather='arrow-right' class="size-4 inline"></i>
                 <i data-feather="home" class="size-4 inline"></i>
             </p>

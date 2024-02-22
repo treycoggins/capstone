@@ -1,4 +1,4 @@
 <?php
 // include the view
-require("views/index.view.php");
+require "views/index.view.php";
 

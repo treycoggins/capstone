@@ -15,4 +15,4 @@ $query = "SELECT * FROM products WHERE product_id = :id;";
 $products = $db->query($query, ['id' => $id])->fetchAll();
 
 // include the product view
-require("views/product.view.php");
+require "views/product.view.php";
