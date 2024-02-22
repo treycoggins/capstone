@@ -1,8 +1,8 @@
-<?php require("views/partials/_head.php") ?>
+<?php require "views/partials/_head.php" ?>
 
 <body class="bg-slate-200 font-sans w-full h-screen flex flex-col justify-center items-center">
-    <?php require("partials/_header.php") ?>
-    <?php require("partials/_nav.php") ?>
+    <?php require "partials/_header.php" ?>
+    <?php require "partials/_nav.php" ?>
 
     <main class="flex justify-center items-center text-center w-screen grow">
         <a href="/">

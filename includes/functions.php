@@ -1,10 +1,9 @@
 <?php
-
-
-function d($var) {
+function dd($var) {
     echo "<pre>";
     var_dump($var);
     echo "</pre>";
+    die();
 }
 function flatten_array($array)
 {

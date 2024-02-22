@@ -1,8 +1,5 @@
 
-
 <?php require("partials/_head.php") ?>
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 <body class="bg-slate-200 text-primary font-sans w-full h-screen flex flex-col justify-center items-center">
   <?php require("partials/_header.php") ?>

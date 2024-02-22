@@ -5,7 +5,9 @@
 class Database
 {
     public $connection;
-    public function __construct($config, $user = 'treycoggins', $password = 'Biodon4$')
+    // TODO fix environment variables prior to upload
+    // public function __construct($config, $user = $_ENV['MYSQL_USERNAME'], $password = $_ENV['MYSQL_PASSWORD'])
+    public function __construct($config, $user = "treycoggins", $password = "Biodon4$")
     {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
         $options = [
@@ -24,4 +26,5 @@ class Database
         $statement->execute($params);
         return $statement;
     }
+    
 }
