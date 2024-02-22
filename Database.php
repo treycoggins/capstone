@@ -7,7 +7,7 @@ class Database
     public $connection;
     // TODO fix environment variables prior to upload
     // public function __construct($config, $user = $_ENV['MYSQL_USERNAME'], $password = $_ENV['MYSQL_PASSWORD'])
-    public function __construct($config, $user = "treycoggins", $password = "Biodon4$")
+    public function __construct($config, $username = "treycoggins", $password = "whtmg%5t")
     {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
         $options = [
@@ -15,7 +15,7 @@ class Database
             PDO::ATTR_EMULATE_PREPARES => false,
         ];
         try {
-            $this->connection = new PDO($dsn, $user, $password, $options);
+            $this->connection = new PDO($dsn, $username, $password, $options);
         } catch (PDOException  $error) {
             throw new PDOException($error->getMessage(), $error->getCode());
         };
