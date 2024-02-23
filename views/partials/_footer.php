@@ -1,18 +1,16 @@
-<footer class="grid grid-cols-2 bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md h-min w-screen py-4">
-  <div class="m-4">
-    <p class="hover:text-secondary-light p-1.5">Your Account</p>
-    <p class="hover:text-secondary-light p-1.5">Your Lists</p>
-    <p class="hover:text-secondary-light p-1.5">Your Orders</p>
+<footer class="flex justify-between bg-primary text-secondary-dark border-secondary-dark border-t-4 shrink-0 text-md h-min w-screen py-4">
+  <div class="mx-4 min-w-max">
+    <p class="hover:text-secondary-light p-1.5 text-xs">Your Account</p>
+    <p class="hover:text-secondary-light p-1.5 text-xs">Your Lists</p>
+    <p class="hover:text-secondary-light p-1.5 text-xs">Your Orders</p>
   </div>
-  <div class="flex flex-col h-full justify-center items-start">
-    <div class="flex hover:text-secondary-light mb-4">
-      <i data-feather="facebook"></i>
-      <p class="ms-3">Facebook</p>
-    </div>
-    <div class="flex hover:text-secondary-light">
-      <i data-feather="twitter"></i>
-      <p class="ms-3">Twitter</p>
-    </div>
+  <div class="flex flex-col w-full h-auto self-end">
+    <img class="w-16" src="../../public/img/logo.png" alt="Bit Buggy Logo">
+    <p class="text-xs">&copy;Capstone Project 2024</p>
+  </div>
+  <div class="flex flex-col h-full mx-4 self-start">
+    <i data-feather="facebook" class="m-2"></i>
+    <i data-feather="twitter" class="m-2"></i>
   </div>
 </footer>
 
@@ -23,4 +21,5 @@
 </script>
 
 </body>
+
 </html>
