@@ -4,4 +4,4 @@ node_modules/
 .vscode/
 vendor/
 *.log
-.env:
+.env
