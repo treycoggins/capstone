@@ -15,7 +15,6 @@
 </footer>
 
 <script src="../../public/js/nav.js"></script>
-<!-- <script src="../public/js/signup.js"></script> -->
 <script>
   feather.replace();
 </script>

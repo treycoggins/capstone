@@ -1,12 +1,11 @@
 
 <?php
-require 'includes/functions.php';
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 $routes = [
     "/" => "controllers/index.php",
     "/home" => "controllers/index.php",
-    "/signin" => "controllers/signin.php",
+    "/login" => "controllers/login.php",
     "/about" => "controllers/about.php",
     "/product" => "controllers/product.php",
     "/contact" => "controllers/contact.php",
@@ -14,6 +13,8 @@ $routes = [
     "/account" => "controllers/account.php",
     "/list" =>  "controllers/list.php",
     "/orders" => "controllers/orders.php",
+    "/logout" => "controllers/logout.php",
+    "/register" => "controllers/register.php",
 ];
 
 if (array_key_exists($uri, $routes)) {

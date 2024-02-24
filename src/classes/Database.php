@@ -1,13 +1,11 @@
 <?php
-require 'db/functions.php';
-
 // Connect to the database, and execute a query
 class Database
 {
     public $connection;
     // TODO fix environment variables prior to upload
     // public function __construct($config, $user = $_ENV['MYSQL_USERNAME'], $password = $_ENV['MYSQL_PASSWORD'])
-    public function __construct($config, $username = "surfnoqi_trey", $password = "whtmg%5t")
+    public function __construct(array $config, string $username, string $password)
     {
         $dsn = 'mysql:' . http_build_query($config, '', ';');
         $options = [
@@ -20,9 +18,12 @@ class Database
             throw new PDOException($error->getMessage(), $error->getCode());
         };
     }
-    public function query($query, $params = [])
+    public function runSQL(string $sql, array $params = null)
     {
-        $statement = $this->connection->prepare($query);
+        if(!$params) {
+            return $this->connection->query($sql);
+        }
+        $statement = $this->connection->prepare($sql);
         $statement->execute($params);
         return $statement;
     }

@@ -1,12 +1,21 @@
+# Enable/Disable Error Displays and Logging
+php_flag    display_errors  On
+php_flag    log_errors      On
+php_value   error_reporting E_ALL
+php_value   error_log       /error.log
+
+# Redirect to error pages
+ErrorDocument 404 /views/404.php
+ErrorDocument 500 /views/500.php
+
 # Disable directory browsing
-#Options -Indexes
+Options -Indexes
 
 # Set the default page
-#DirectoryIndex index.html index.php
+DirectoryIndex index.html index.php
 
-# Redirect www to non-www
+# Rewrite all requests to index
 RewriteEngine On
-#RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?q=$1 [L]

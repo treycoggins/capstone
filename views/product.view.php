@@ -1,11 +1,9 @@
-
-
-<?php require('partials/_head.php'); ?>
+<?php require 'partials/_head.php'; ?>
 </head>
 
 <body class="bg-bg-light text-primary font-sans relative">
-  <?php require("partials/_header.php") ?>
-  <?php require("partials/_nav.php") ?>
+  <?php require "partials/_header.php" ?>
+  <?php require "partials/_nav.php" ?>
 
   <main class="relative">
     <section class="m-6">
@@ -33,4 +31,4 @@
   </main>
 
 
-  <?php require('partials/_footer.php'); ?>
+  <?php require 'partials/_footer.php'; ?>

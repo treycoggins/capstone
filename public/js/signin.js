@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const signInForm = document.getElementById("signin-form");
+	const signInForm = document.getElementById("login-form");
 	// const isShrunk = false;
 
 	// const textElements = document.querySelectorAll(".shrink-text");

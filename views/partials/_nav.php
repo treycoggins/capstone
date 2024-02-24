@@ -1,12 +1,21 @@
+<?php 
+$logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
+?>
+
 <nav id="nav" class="absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
   <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class=" h-1/5 py-4 bg-secondary-light">
     <div class="flex p-4">
       <div id="user-login" class="flex justify-end me-3">
         <i data-feather="user"></i>
-        <a href="/signin">
+        <?= $logged_in ?
+        '<a href="/logout">
+          <p class="self-center text-sm pe-2">Sign out</p>
+        </a>' : 
+        '<a href="/login">
           <p class="self-center text-sm pe-2">Sign in</p>
-        </a>
+        </a>'
+        ?>
       </div>
     </div>
     <div class="ms-4">
@@ -47,7 +56,7 @@
       <a href="/orders"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
       <a href="/orders">Your Orders</a>
     </li>
-    
+
 
   </ul>
 </nav>

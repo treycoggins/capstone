@@ -1,6 +1,6 @@
 <?php
-require('db/localdb.connection.php');
-require('db/functions.php');
+require 'db/localdb.connection.php';
+require 'db/functions.php';
 
 $sql = "SELECT * FROM products WHERE product_id = 17;";
 
