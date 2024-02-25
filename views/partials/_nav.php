@@ -2,17 +2,17 @@
 $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
 ?>
 
-<nav id="nav" aria-expanded="false" class="absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
-  <i id="navMenu-close" class="absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
+<nav id="nav" aria-hidden="true" aria-expanded="false" class="absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
+  <i tabindex="-1" id="navMenu-close" class="nav-links absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class=" h-1/5 py-4 bg-secondary-light">
     <div class="flex p-4">
       <div id="user-login" class="flex justify-end me-3">
         <i data-feather="user"></i>
         <?= $logged_in ?
-          '<a href="/logout">
+          '<a class="nav-links" tab-index="-1" href="/logout">
           <p class="self-center text-sm pe-2">Sign out</p>
         </a>' :
-          '<a href="/login">
+          '<a class="nav-links" tab-index="-1" href="/login">
           <p class="self-center text-sm pe-2">Sign in</p>
         </a>'
         ?>

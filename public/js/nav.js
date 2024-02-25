@@ -57,12 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		expanded = !expanded;
 		navMenu.setAttribute("aria-expanded", expanded);
 		toggleTabIndexForNav();
+		navMenu.setAttribute("aria-hidden", "false");
+
 		navMenu.classList.toggle("nav-open");
 		navMenu.classList.remove("nav-close");
 		overlay.classList.toggle("overlay-hidden");
 		overlay.classList.toggle("overlay-visible");
 		document.body.style.overflow = "hidden";
-
 		overlay.addEventListener("click", navMenuClose);
 
 		return expanded;
@@ -79,6 +80,37 @@ document.addEventListener("DOMContentLoaded", function () {
 		overlay.classList.toggle("overlay-visible");
 		document.body.style.overflow = "visible";
 	};
+	// Before toggling the menu, it is hidden
+	const toggleMenu = () => {
+		const ariaHidden = navMenu.getAttribute("aria-hidden") === true;
+		navMenu.setAttribute("aria-hidden", !ariaHidden);
+		navMenuOpen();
+	};
+	// When "Enter" is pressed on the hamburger, toggle the menu to visible on screen readers
+	hamburger.addEventListener("keypress", (event) => {
+		if (event.key === "Enter") {
+			toggleMenu(); // Toggle the aria-hidden attribute and add the nav-open class
+		}
+	});
+	// When tabbing away from the menu, or ESC is pressed, close the menu
+	navMenu.addEventListener("blur", () => {
+		navMenu.setAttribute("aria-hidden", "true");
+	});
+	navMenuCloseBtn.addEventListener("keypress", (event)=> {
+		if(event.key === "Enter") {
+			navMenuClose();
+		}
+	})
+	document.addEventListener("keypress", (event) => {
+		if (event.key === "Escape") {
+			const isNavMenuOpen = navMenu.getAttribute("aria-expanded") === true;
+			if (isNavMenuOpen) {
+				navMenu.setAttribute("aria-expanded", "false");
+			}
+			navMenuClose();
+		}
+	});
+
 
 	hamburger.addEventListener("click", navMenuOpen);
 	navMenuCloseBtn.addEventListener("click", navMenuClose);

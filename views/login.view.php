@@ -9,7 +9,7 @@
     <div class="flex flex-col tablet:order-3 tablet:items-center">
       <p class="text-lg mb-2">New to BitBuggy?</p>
       <div class="mb-8">
-        <a href="/signup" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs">Create an Account</a>
+        <a tabindex="4" href="/signup" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs">Create an Account</a>
       </div>
     </div>
     <section class="flex flex-col justify-center border-secondary-dark border-2 w-10/12 mx-auto my-8 p-4 laptop:w-7/12 desktop:max-w-2xl laptop:p-10">
@@ -20,7 +20,7 @@
         <input tabindex="1" id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
         <label for="password" class="ms-4">Password</label>
         <input tabindex="2" type="password" id="password" name="password" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
-        <button type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none m-4 rounded-md">Continue</button>
+        <button tabindex="3" type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none m-4 rounded-md">Continue</button>
       </form>
     </section>
   </main>
