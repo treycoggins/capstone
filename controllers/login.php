@@ -1,11 +1,11 @@
-
 <?php
-// declare(strict_types=1);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+declare(strict_types=1);
+try {
 require "db/db_connect.php";
+} catch (Error $e){
+    header("Location: views/500.php"); 
+    die();
+}
 // require "includes/functions.php";
 require "models/login.model.php";   // Bring in login logic
 

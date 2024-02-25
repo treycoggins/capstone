@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	const navLinks = [...document.querySelectorAll(".nav-links")];
 	// Get all focusable elements
 	const focusableElements = document.querySelectorAll(
-		"a, button, input, select, textarea, [tabindex]"
+		"[href], button, input, select, textarea, [tabindex]:not([tabindex='-1']"
 	);
 	let expanded = navMenu.getAttribute("aria-expanded") === "true";
 
@@ -56,9 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		disableTabbing();
 		expanded = !expanded;
 		navMenu.setAttribute("aria-expanded", expanded);
-		toggleTabIndexForNav();
 		navMenu.setAttribute("aria-hidden", "false");
-
+		toggleTabIndexForNav();
 		navMenu.classList.toggle("nav-open");
 		navMenu.classList.remove("nav-close");
 		overlay.classList.toggle("overlay-hidden");
@@ -73,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		enableTabbing();
 		expanded = !expanded;
 		navMenu.setAttribute("aria-expanded", expanded);
+		navMenu.setAttribute("aria-hidden", "true");
 		toggleTabIndexForNav();
 		navMenu.classList.remove("nav-open");
 		navMenu.classList.toggle("nav-close");
@@ -92,25 +92,26 @@ document.addEventListener("DOMContentLoaded", function () {
 			toggleMenu(); // Toggle the aria-hidden attribute and add the nav-open class
 		}
 	});
-	// When tabbing away from the menu, or ESC is pressed, close the menu
-	navMenu.addEventListener("blur", () => {
-		navMenu.setAttribute("aria-hidden", "true");
-	});
-	navMenuCloseBtn.addEventListener("keypress", (event)=> {
-		if(event.key === "Enter") {
-			navMenuClose();
+	// // When tabbing away from the menu, or ESC is pressed, close the menu
+	// navMenu.addEventListener("blur", () => {
+	// 	navMenu.setAttribute("aria-hidden", "true");
+	// });
+	/* TODO Fix this so that the Escape Button closes the nav menu */
+	navMenuCloseBtn.addEventListener("keypress", (event) => {
+		if (event.key === "Enter") {
+			if (navMenu.getAttribute("aria-expanded") === "true") {
+				navMenuClose();
+			}
 		}
-	})
+	});
 	document.addEventListener("keypress", (event) => {
 		if (event.key === "Escape") {
-			const isNavMenuOpen = navMenu.getAttribute("aria-expanded") === true;
+			const isNavMenuOpen = navMenu.getAttribute("aria-expanded") === "true";
 			if (isNavMenuOpen) {
-				navMenu.setAttribute("aria-expanded", "false");
+				navMenuClose();
 			}
-			navMenuClose();
 		}
 	});
-
 
 	hamburger.addEventListener("click", navMenuOpen);
 	navMenuCloseBtn.addEventListener("click", navMenuClose);
