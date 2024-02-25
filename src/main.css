@@ -4,12 +4,19 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
+
 :root {
   --primary-light: rgb(56, 120, 93);
   --primary: rgb(23, 84, 66);
   --primary-dark: rgb(6, 52, 39);
   --secondary-light: rgb(215, 184, 122);
   --secondary-dark: rgb(175, 140, 74);
+}
+
+/* Focus styles for screen readers */
+*:focus {
+  outline: 3px solid blue;
+  background-color: yellowgreen;
 }
 
 /*/////////////////		ANIMATIONS		//////////////////*/

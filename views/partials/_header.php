@@ -7,7 +7,7 @@
   </div>
   <form class="py-3 flex w-10/12 justify-end items-center grow mx-4 order-3 tablet:order-2 tablet:w-1/3 tablet:grow-0" action="/products" method="GET">
     <input class="rounded-md p-2 w-full" type="text" name="header-search-field" placeholder="Search products">
-    <button type="submit" class="relative">
+    <button tabindex="0" type="submit" class="relative">
       <i class="size-6 text-slate-800 absolute top-[-14px] right-[10px]" data-feather="search"></i>
     </button>
   </form>

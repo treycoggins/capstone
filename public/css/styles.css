@@ -698,10 +698,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .inline {
   display: inline;
 }
@@ -840,10 +836,6 @@ video {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-rows-2 {
-  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -1095,11 +1087,6 @@ video {
   line-height: 1;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
-
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
@@ -1136,11 +1123,6 @@ video {
 .text-bg-dark {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
-}
-
-.text-gray-300 {
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -1183,6 +1165,10 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.outline {
+  outline-style: solid;
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1197,6 +1183,13 @@ video {
   --primary-dark: rgb(6, 52, 39);
   --secondary-light: rgb(215, 184, 122);
   --secondary-dark: rgb(175, 140, 74);
+}
+
+/* Focus styles for screen readers */
+
+*:focus {
+  outline: 3px solid blue;
+  background-color: yellowgreen;
 }
 
 /*/////////////////		ANIMATIONS		//////////////////*/
@@ -1390,6 +1383,11 @@ video {
 
   .laptop\:p-10 {
     padding: 2.5rem;
+  }
+
+  .laptop\:text-9xl {
+    font-size: 8rem;
+    line-height: 1;
   }
 }
 

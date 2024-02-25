@@ -17,9 +17,9 @@
       <p class="font-bold text-primary m-0">Sign in.</p>
       <form class="flex flex-col self-center my-10 w-11/12 text-secondary-dark" action="/login" method="POST">
         <label for="username" class="ms-4">Username</label>
-        <input id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
+        <input tabindex="1" id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
         <label for="password" class="ms-4">Password</label>
-        <input type="password" id="password" name="password" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
+        <input tabindex="2" type="password" id="password" name="password" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
         <button type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none m-4 rounded-md">Continue</button>
       </form>
     </section>

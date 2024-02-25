@@ -8,7 +8,7 @@ require "views/partials/_head.php";
 
     <main class="flex justify-center items-center text-center w-screen grow">
         <a href="/">
-            <h1 class="text-9xl text-slate-500">Thank You</h1>
+            <h1 class="text-5xl laptop:text-9xl text-slate-500">Thank You</h1>
             <p class="font-bold inline">You are now being signed out.</p>
             <p class="">You are being redirected to the home page.
                 <i data-feather="home" class="size-4 inline"></i>
