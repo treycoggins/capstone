@@ -5,6 +5,8 @@
   <?php require "partials/_nav.php" ?>
   <h1 class="text-2xl mt-6">Our About Page is</h1>
 
-  <?php require 'partials/_construction.php' ?>
+  <p>Add content here</p>
+  <p>Add more content here</p>
+  <h2>This is an h2</h2>
 
   <?php require "partials/_footer.php" ?>
