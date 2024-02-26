@@ -19,7 +19,8 @@ class Validate
 
     public static function isPassword($password)
     {
-        if ( mb_strlen($password) >= 8                     // Length 8 or more chars
+        if (
+            mb_strlen($password) >= 8                     // Length 8 or more chars
             and preg_match('/[A-Z]/', $password)             // Contains uppercase A-Z
             and preg_match('/[a-z]/', $password)             // Contains lowercase a-z
             and preg_match('/[0-9]/', $password)             // Contains 0-9
@@ -31,8 +32,8 @@ class Validate
 
     public static function isMemberId($member_id, array $member_list): bool
     {
-        foreach ($member_list as $member) {
-            if ($member['id'] == $member_id) {
+        foreach ($member_list as $user) {
+            if ($user['id'] == $member_id) {
                 return true;
             }
         }

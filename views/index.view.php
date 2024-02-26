@@ -27,7 +27,7 @@
     </section>
 
     <section id="section-members" class="text-center my-4 relative">
-      <h2 class="text-4xl mb-10">Become a member for extra savings and benefits!</h2>
+      <h2 class="text-4xl mb-10">Become a user for extra savings and benefits!</h2>
       <a href="/signup" class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
         up now!</a>
       <div class="h-full flex flex-col tablet:flex-row justify-center items-center">
@@ -40,7 +40,7 @@
         </div>
         <div class="card flex flex-col tablet:mx-10 justify-center items-center">
           <i data-feather="dollar-sign" class="size-14"></i>
-          <h3 class="text-center text-3xl text-sans pt-4">Member's Deals</h3>
+          <h3 class="text-center text-3xl text-sans pt-4">User's Deals</h3>
           <p class="text-xl m-5">Members also receive deep price cuts on in-demand products and first
             looks at new product selections.</p>
         </div>

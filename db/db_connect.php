@@ -9,7 +9,7 @@ if ($_SERVER['HTTP_HOST'] === "127.0.0.1:8080") {
     echo "DB Connected!";
 } else {
     try {
-        $db = new Database([...$db_configs["remote_db"]], 'surfnoqi_trey', 'whtmg%5t');
+        $db = new Database([...$db_configs["remote_db"]], 'surfnoqi_trey', 'hrdcndy%5t');
     } catch (Exception $e) {
         require 'views/500.php';
         error_log($e);

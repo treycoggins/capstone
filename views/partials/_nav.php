@@ -39,7 +39,7 @@ $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
     </li>
     <li class="nav-links flex ms-4 my-8">
       <a href="/signup" tabindex="-1"><i class="size-5 mx-2" data-feather="user-check"></i></a>
-      <a href="/signup" tabindex="-1">Become a Member</a>
+      <a href="/signup" tabindex="-1">Become a User</a>
     </li>
     <li class="nav-links flex ms-4 my-8">
       <a href="/account" tabindex="-1"><i class="size-5 mx-2" data-feather="bookmark"></i></a>

@@ -2,7 +2,7 @@
 // Connect to the database, and execute a query
 class Database
 {
-    public $connection;
+    private $connection;
     // TODO fix environment variables prior to upload
     // public function __construct($config, $user = $_ENV['MYSQL_USERNAME'], $password = $_ENV['MYSQL_PASSWORD'])
     public function __construct(array $config, string $username, string $password)
