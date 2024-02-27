@@ -5,7 +5,7 @@
     <p class="hover:text-secondary-light p-1.5 text-xs">Your Orders</p>
   </div>
   <div class="flex flex-col w-full h-auto self-end">
-    <img class="w-16" src="../../public/img/logo.png" alt="Bit Buggy Logo">
+    <img class="w-16" src="../img/logo.png" alt="Bit Buggy Logo">
     <p class="text-xs">&copy;Capstone Project 2024</p>
   </div>
   <div class="flex flex-col h-full mx-4 self-start">
@@ -14,7 +14,7 @@
   </div>
 </footer>
 
-<script src="../../public/js/nav.js"></script>
+<script src="../js/nav.js"></script>
 <script>
   feather.replace();
 </script>

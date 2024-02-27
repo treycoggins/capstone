@@ -1,5 +1,15 @@
 <?php
 
+function base_path($path)
+{
+    return BASE_PATH . $path;
+}
+
+function view($path)
+{
+    require base_path("views/" . $path);
+}
+
 // FORMATTING FUNCTIONS
 function html_escape($text): string
 {
@@ -58,7 +68,8 @@ function flatten_array($array)
     }
     return $result;
 }
-function dd($var) {
+function dd($var)
+{
     echo "<pre>";
     var_dump($var);
     echo "</pre>";

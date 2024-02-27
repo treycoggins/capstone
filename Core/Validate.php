@@ -1,6 +1,11 @@
 <?php
 class Validate
 {
+    public static function isValidComment(string $value, $min = 1, $max = 1000): bool
+    {
+        $value = trim($value);
+        return strlen($value) >= $min && strlen($value) <= $max;
+    }
     public static function isNumber($number, $min = 0, $max = 100): bool
     {
         return ($number >= $min and $number <= $max);
@@ -28,25 +33,5 @@ class Validate
             return true;                                     // Passed all tests
         }
         return false;                                      // Invalid password
-    }
-
-    public static function isMemberId($member_id, array $member_list): bool
-    {
-        foreach ($member_list as $user) {
-            if ($user['id'] == $member_id) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static function isCategoryId($category_id, array $category_list): bool
-    {
-        foreach ($category_list as $category) {
-            if ($category['id'] == $category_id) {
-                return true;
-            }
-        }
-        return false;
     }
 }

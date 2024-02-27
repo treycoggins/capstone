@@ -2,7 +2,7 @@
 <header class="bg-primary border-b-4 border-secondary-dark h-min w-full flex flex-wrap pt-4 justify-between">
   <div class="mt-4 mx-4 text-secondary-dark tablet:grow">
     <a tabindex="0" href="/">
-      <img class="h-auto shrink-0 w-20 ms-4 mb-4" src="../public/img/logo.png" alt="BitBuggy Logo" />
+      <img class="h-auto shrink-0 w-20 ms-4 mb-4" src="img/logo.png" alt="BitBuggy Logo" />
     </a>
   </div>
   <form class="py-3 flex w-10/12 justify-end items-center grow mx-4 order-3 tablet:order-2 tablet:w-1/3 tablet:grow-0" action="/products" method="GET">

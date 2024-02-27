@@ -2,4 +2,4 @@
 
     
 // include the view
-require "views/signup.view.php";
+require view("signup.view.php");

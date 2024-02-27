@@ -1,4 +1,3 @@
-
 <?php
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
@@ -18,12 +17,12 @@ $routes = [
 ];
 
 if (array_key_exists($uri, $routes)) {
-    $filePath = isset($_SERVER['SCRIPT_FILENAME']) ? $_SERVER['SCRIPT_FILENAME'] : '';
-    $baseDir = $_SERVER["DOCUMENT_ROOT"];
-    $controllerFile = $baseDir . "/" . $routes[$uri];
+    
+    $controllerFile = BASE_PATH . $routes[$uri];
     require $controllerFile;
 } else {
-    http_response_code(404);
-    require "views/404.php";
+    http_response_code(Response::NOT_FOUND);
+    require view("404.php");
     die();
 };
+

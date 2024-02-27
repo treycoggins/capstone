@@ -11,16 +11,16 @@
 
     <section id="section-categories">
       <div class="grid gap-x-4 gap-y-10 grid-cols-2 laptop:grid-cols-4 text-center p-3">
-        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="../public/img/iphone_toss.jpg" alt="electronics">
+        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="img/iphone_toss.jpg" alt="electronics">
           <p>Electronics</p>
         </div>
-        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="../public/img/fashion.jpg" alt="fashion model">
+        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="img/fashion.jpg" alt="fashion model">
           <p>Fashion</p>
         </div>
-        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="../public/img/beauty_face.jpg" alt="beauty products">
+        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="img/beauty_face.jpg" alt="beauty products">
           <p>Beauty</p>
         </div>
-        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="../public/img/kitchen_table.jpg" alt="home goods">
+        <div class="text-2xl"><img class="h-full w-full object-cover rounded-md" src="img/kitchen_table.jpg" alt="home goods">
           <p>Home Goods</p>
         </div>
       </div>

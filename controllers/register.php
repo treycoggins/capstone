@@ -5,10 +5,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include "includes/functions.php";
-require "db/db_connect.php";
-require "src/classes/Validate.php";
-require "src/classes/User.php";
+require base_path("db/db_connect.php");
+require base_path("Core/Validate.php");
+require base_path("src/classes/User.php");
 
 $user = [];
 $errors = [];
