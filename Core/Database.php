@@ -1,5 +1,7 @@
 <?php
-// Connect to the database, and execute a query
+namespace Core;
+use PDO;
+use PDOException;
 class Database
 {
     private $connection;
@@ -25,7 +27,6 @@ class Database
         }
         $statement = $this->connection->prepare($sql);
         $statement->execute($params);
-        return $statement;
     }
     
 }

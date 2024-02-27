@@ -1,5 +1,4 @@
-<?php require 'partials/_head.php'; ?>
-</head>
+<?php require "partials/_head.php"; ?>
 
 <body class="bg-bg-light text-primary font-sans relative">
   <?php require "partials/_header.php" ?>

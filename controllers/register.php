@@ -1,9 +1,8 @@
 <?php
 
 declare(strict_types=1);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
+use Core\Validate;
 
 require base_path("db/db_connect.php");
 require base_path("Core/Validate.php");

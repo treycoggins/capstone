@@ -1,8 +1,8 @@
-<?php require 'partials/_head.php'; ?>
+<?php require ('partials/_head.php'); ?>
 
 <body class="bg-bg-light text-primary font-sans relative overflow-x-hidden">
-  <?php require "partials/_header.php" ?>
-  <?php require "partials/_nav.php" ?>
+  <?php require ("partials/_header.php"); ?>
+  <?php require ("partials/_nav.php"); ?>
 
   <main class="relative">
     <section id="section-browse" class="">
@@ -64,4 +64,4 @@
   </main>
 
 
-  <?php require 'partials/_footer.php'; ?>
+  <?php require ('partials/_footer.php'); ?>

@@ -5,5 +5,4 @@ require base_path("db/db_connect.php");
 $sql = "SELECT * FROM products;";
 $products = $db->runSQL($sql)->fetchAll();
 
-// include the product view
 require view("product.view.php");

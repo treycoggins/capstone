@@ -9,7 +9,10 @@ function view($path)
 {
     require base_path("views/" . $path);
 }
-
+function redirect($url, $statusCode = 200) {
+    header("Location: " . $url, true, $statusCode);
+    die();
+}
 // FORMATTING FUNCTIONS
 function html_escape($text): string
 {

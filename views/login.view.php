@@ -1,9 +1,10 @@
-<?php include "partials/_head.php"; ?>
-</head>
+
+<?php require "partials/_head.php"; ?>
+
 
 <body class="bg-bg-light text-secondary-dark font-sans min-h-screen flex flex-col">
-  <?php include "partials/_header.php" ?>
-  <?php include "partials/_nav.php" ?>
+  <?php require "partials/_header.php" ?>
+  <?php require "partials/_nav.php" ?>
   <main class="flex flex-col w-full mx-4 my-16 tablet:mx-auto tablet:max grow">
     <h1 class="text-4xl tablet:mx-auto tablet:text-7xl desktop:text-9xl tablet:my-8">Welcome</h1>
     <div class="flex flex-col tablet:order-3 tablet:items-center">
@@ -26,4 +27,4 @@
   </main>
 
 
-  <?php include "partials/_footer.php"; ?>
+  <?php require "partials/_footer.php"; ?>
