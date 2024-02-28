@@ -5,8 +5,8 @@ php_value   error_reporting -1
 php_value   error_log   /error.log
 
 # Redirect to error pages
-ErrorDocument 404 views/404.php
-ErrorDocument 500 views/500.php
+ErrorDocument 404 404.php
+ErrorDocument 500 500.php
 
 # Disable directory browsing
 Options -Indexes

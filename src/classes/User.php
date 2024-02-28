@@ -1,5 +1,4 @@
 <?php                               // Namespace declaration
-use Core\Database;
 class User
 {
     public $db;                                       // Holds ref to Database object

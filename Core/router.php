@@ -1,6 +1,7 @@
 <?php
-namespace Core;
-use Core\Response;
+declare(strict_types=1);
+
+require(base_path("Core/Response.php"));
 
 function routeToController($uri, $routes) {
     $uri = html_escape(trim($uri));
@@ -17,9 +18,9 @@ function abort($code = 404)
     require view("{$code}.php");
     die();
 }
-
-$routes = require base_path("routes.php");
 $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+$routes = require base_path("routes.php");
+
 
 
 routeToController($uri, $routes);

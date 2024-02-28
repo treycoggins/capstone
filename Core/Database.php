@@ -1,8 +1,5 @@
 <?php
 
-namespace Database;
-use PDO;
-use PDOException;
 class Database
 {
     private $connection;
@@ -34,7 +31,7 @@ class Database
             return $this->connection->query($sql);
         }
         $statement = $this->connection->prepare($sql);
-        $result = $statement->execute($params);
-        return $result;
+        $statement->execute($params);
+        return $statement;
     }
 }

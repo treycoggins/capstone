@@ -1,5 +1,4 @@
 <?php
-namespace Core;
 class Validate
 {
     public static function isValidComment(string $value, $min = 1, $max = 1000): bool

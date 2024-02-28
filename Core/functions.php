@@ -11,7 +11,6 @@ function view($path)
 function redirect($url, $statusCode = 404)
 {
     header("Location: " . $url, true, $statusCode);
-    die();
 }
 // FORMATTING FUNCTIONS
 function html_escape($text): string

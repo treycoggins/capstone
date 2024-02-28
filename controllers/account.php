@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-require base_path("db/db_connect.php");
+require base_path("Core/db_connect.php");
 require base_path("models/login.model.php");    // Bring in the login logic functions
 
 session_start();   // Start or renew the session

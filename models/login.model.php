@@ -26,7 +26,7 @@ function logout()   // Terminate the session
 function require_login($logged_in = false)  // Check if user is logged in
 {
     if ($logged_in === false) {     // If not logged in
-        header("Location: /login");  // Send to the login page
+        redirect(view("login.php"));  // Send to the login page
         die();                         // Stop the rest of the page from running
     }
 }
