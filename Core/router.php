@@ -1,14 +1,16 @@
 <?php
+namespace Core;
+use Core\Response;
 
 function routeToController($uri, $routes) {
-    if (array_key_exists($uri, $routes)) {
-        require base_path($routes[$uri]);
+    $uri = html_escape(trim($uri));
+    $controllerFile = base_path($routes[$uri]);
+    if (file_exists($controllerFile)) {
+        require $controllerFile;
     } else {
-        abort();
+        abort(Response::NOT_FOUND);
     };
 }
-
-
 function abort($code = 404)
 {
     http_response_code($code);
@@ -17,7 +19,7 @@ function abort($code = 404)
 }
 
 $routes = require base_path("routes.php");
-$uri = isset($_SERVER["REQUEST_URI"]) ? parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH) : "/";
+$uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
 
 routeToController($uri, $routes);

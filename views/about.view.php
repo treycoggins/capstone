@@ -1,3 +1,4 @@
+
 <?php require "partials/_head.php" ?>
 
 <body class="bg-slate-200 text-primary font-sans w-full h-screen flex flex-col justify-center items-center">

@@ -3,9 +3,13 @@
 class Router
 {
     protected $routes = [];
-    public  function get($uri, $controller)
+
+    public function __construct() {
+        
+    }
+    public function get($uri, $controller)
     {
-        this->routes[] = [
+        $this->routes[] = [
         "uri" => $uri,
         "controller" => $controller,
         "method" => "GET",
@@ -13,7 +17,7 @@ class Router
     }
     public function post()
     {
-        this->routes[] = [
+        $this->routes[] = [
             "uri" => $uri,
             "controller" => $controller,
             "method" => "POST",
@@ -21,7 +25,7 @@ class Router
     }
     public function patch()
     {
-        this->routes[] = [
+        $this->routes[] = [
             "uri" => $uri,
             "controller" => $controller,
             "method" => "PATCH",
@@ -29,7 +33,7 @@ class Router
     }
     public function put()
     {
-        this->routes[] = [
+        $this->routes[] = [
             "uri" => $uri,
             "controller" => $controller,
             "method" => "PUT",

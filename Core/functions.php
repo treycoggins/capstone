@@ -4,12 +4,12 @@ function base_path($path)
 {
     return BASE_PATH . $path;
 }
-
 function view($path)
 {
-    require base_path("views/" . $path);
+    return base_path("views/" . $path);
 }
-function redirect($url, $statusCode = 200) {
+function redirect($url, $statusCode = 404)
+{
     header("Location: " . $url, true, $statusCode);
     die();
 }
@@ -43,6 +43,8 @@ function handle_exception($e)
     http_response_code(500);              // Set the http response code
     echo "<h1>Sorry, a problem occurred</h1>   
           The site's owners have been informed. Please try again later.";
+    echo "</br>";
+    echo $e->getMessage();
 }
 
 // Handle fatal errors

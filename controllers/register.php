@@ -1,12 +1,10 @@
 <?php
 
 declare(strict_types=1);
-
 use Core\Validate;
 
 require base_path("db/db_connect.php");
-require base_path("Core/Validate.php");
-require base_path("src/classes/User.php");
+require base_path("User.php");
 
 $user = [];
 $errors = [];
