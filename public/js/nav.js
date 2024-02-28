@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 	// Before toggling the menu, it is hidden
 	const toggleMenu = () => {
-		const ariaHidden = navMenu.getAttribute("aria-hidden") === true;
+		const ariaHidden = navMenu.getAttribute("aria-hidden") === "true";
 		navMenu.setAttribute("aria-hidden", !ariaHidden);
 		navMenuOpen();
 	};
