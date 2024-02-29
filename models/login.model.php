@@ -28,5 +28,7 @@ function require_login($logged_in = false)  // Check if user is logged in
     if ($logged_in === false) {     // If not logged in
         redirect(view("login.php"));  // Send to the login page
         die();                         // Stop the rest of the page from running
+    } else {
+        redirect(view("account.php"));
     }
 }

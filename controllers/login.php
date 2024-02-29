@@ -3,11 +3,13 @@
 declare(strict_types=1);
 require(base_path("Core/Validate.php"));
 require base_path("models/login.model.php");   // Bring in login logic
+require base_path("Core/db_connect.php");
 
 session_start();      // Start or renew the session
 
 try {
-    require base_path("Core/db_connect.php");
+  
+
 } catch (Exception $e) {
     http_response_code(Response::SERVER_ERROR);
     redirect(view("500.php"), Response::SERVER_ERROR);
@@ -15,8 +17,8 @@ try {
 }
 
 // // Define default values
-$username_sent = "";
-$password_sent = "";
+$username_sent;
+$password_sent;
 
 $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
 if ($logged_in) {                   // If already logged in
@@ -33,11 +35,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {   // If the login form was submitte
         redirect(view("login.php", Response::INVALID_ENTRY));
     }
     // // Write a SQL query statement to check the DB for $username_sent
-    $sql = "SELECT (first_name, username, password) FROM users WHERE username = :username;";
+    $sql = "SELECT password FROM users WHERE username = :username;";
     // // Query the database to determine if the username was found
     $user = $db->runSQL($sql, [$username_sent])->fetch();
     // If user found, does password match hashed password? If so, go to Account page for user. If not, return to login page.
     if ($user) {
+        dd($user);
         password_verify($password_sent, $user["password"]) ? login() : require_login();
         die();
     }
