@@ -2,24 +2,74 @@ document.addEventListener("DOMContentLoaded", function () {
 	const hamburger = document.querySelector("#hamburger");
 	const navMenu = document.querySelector("#nav");
 	const overlay = document.querySelector("#overlay");
-	const navMenuCloseBtn = document.querySelector("#navMenu-close");
-	const navLinks = [...document.querySelectorAll(".nav-links")];
+	const navMenuCloseBtn = document.querySelector("#navMenu-close-X");
+	const navItems = [...document.querySelectorAll(".nav-item")];
+	const navLinks = [...document.getElementsByClassName(".nav-link")];
+
 	// Get all focusable elements
 	const focusableElements = document.querySelectorAll(
-		"[href], button, input, select, textarea, [tabindex]:not([tabindex='-1']"
+		"[href], button, input, select, textarea, [tabindex]:not([tabindex='-1'])"
 	);
 	let expanded = navMenu.getAttribute("aria-expanded") === "true";
 
-	// Disable tabbing for background page when nav is open
-	const disableTabbing = () => {
+	/*    NAV BAR - GENERAL BEHAVIOR     */
+
+	const navMenuOpen = () => {
+		expanded = !expanded;
+		disableTabbingForPage();
+		navMenu.setAttribute("aria-expanded", expanded);
+		navMenu.setAttribute("aria-hidden", !expanded);
+		toggleTabIndexForNav();
+		toggleOverlayAndNavMenu();
+	};
+	const navMenuClose = () => {
+		expanded = !expanded;
+		navMenu.setAttribute("aria-expanded", expanded);
+		navMenu.setAttribute("aria-hidden", !expanded);
+		reenableTabbingForPage();
+		toggleTabIndexForNav();
+		toggleOverlayAndNavMenu();
+	};
+
+	const toggleOverlayAndNavMenu = () => {
+		if (expanded) {
+			overlay.classList.add("overlay-visible");
+			overlay.classList.remove("overlay-hidden");
+			document.body.style.overflow = "hidden";
+			navMenu.classList.toggle("nav-open");
+			navMenu.classList.toggle("nav-close");
+		} else {
+			overlay.classList.remove("overlay-visible");
+			overlay.classList.add("overlay-hidden");
+			document.body.style.overflow = "visible";
+			navMenu.classList.toggle("nav-open");
+			navMenu.classList.toggle("nav-close");
+		}
+		overlay.addEventListener("click", navMenuClose);
+	};
+
+	// navLinks.forEach((link) => {
+	// 	link.addEventListener("click", (event) => {
+	// 		event.preventDefault();
+	// 		navMenu.addEventListener("transitioned", () => {
+	// 			const targetURL = link.getAttribute("href");
+	// 			window.location.href = targetURL;
+	// 		});
+	// 	});
+	// });
+
+	/* ACCESSIBLE KEYBOARD NAVIGATION (TAB, ENTER, ESC) */
+
+	// Disable tabbing for background page when nav is open */
+	const disableTabbingForPage = () => {
 		// Set tabindex to -1 for all focusable elements
 		focusableElements.forEach((el) => {
-			// Exclude nav-link elements
-			if (!el.classList.contains("nav-links")) {
+			// Exclude nav-link elements and elements already not in the tab order
+			if (el.getAttribute("tabindex") !== "-1") {
 				// Save original tabindex value
 				el.setAttribute(
 					"data-original-tabindex",
-					el.getAttribute("tabindex") || 0
+					el.getAttribute("tabindex") || "-1"
 				);
 				// Set tabindex to -1
 				el.setAttribute("tabindex", "-1");
@@ -28,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	// Reenable tabbing after nav closes
-	const enableTabbing = () => {
+	const reenableTabbingForPage = () => {
 		focusableElements.forEach((el) => {
 			// Restore original tabindex values for each focusable element unless its a nav-link, then disable
 			const originalTabIndex = el.getAttribute("data-original-tabindex");
@@ -39,83 +89,41 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	const toggleTabIndexForNav = () => {
-		navLinks.forEach((link) => {
-			const children = link.children;
-			const oddChildren = Array.from(children).filter(
-				(child, index) => index % 2 !== 0
-			);
+		navItems.forEach((item) => {
+			const children = Array.from(item.children);
 			if (expanded) {
-				oddChildren.forEach((child) => child.setAttribute("tabindex", "1"));
+				item.setAttribute("tabindex", "0"); // Make parent navItem focusable
+				children.forEach((child) => child.setAttribute("tabindex", "-1")); // Make children not focusable
 			} else {
-				oddChildren.forEach((child) => child.setAttribute("tabindex", "-1"));
+				item.setAttribute("tabindex", "-1"); // Make parent navItem not focusable
+				children.forEach((child) => child.setAttribute("tabindex", "-1")); // Make children focusable
 			}
 		});
 	};
 
-	const navMenuOpen = () => {
-		disableTabbing();
-		expanded = !expanded;
-		navMenu.setAttribute("aria-expanded", expanded);
-		navMenu.setAttribute("aria-hidden", "false");
-		toggleTabIndexForNav();
-		navMenu.classList.toggle("nav-open");
-		navMenu.classList.remove("nav-close");
-		overlay.classList.toggle("overlay-hidden");
-		overlay.classList.toggle("overlay-visible");
-		document.body.style.overflow = "hidden";
-		overlay.addEventListener("click", navMenuClose);
-
-		return expanded;
-	};
-
-	const navMenuClose = () => {
-		enableTabbing();
-		expanded = !expanded;
-		navMenu.setAttribute("aria-expanded", expanded);
-		navMenu.setAttribute("aria-hidden", "true");
-		toggleTabIndexForNav();
-		navMenu.classList.remove("nav-open");
-		navMenu.classList.toggle("nav-close");
-		overlay.classList.toggle("overlay-hidden");
-		overlay.classList.toggle("overlay-visible");
-		document.body.style.overflow = "visible";
-	};
-	// Before toggling the menu, it is hidden
-	const toggleMenu = () => {
-		const ariaHidden = navMenu.getAttribute("aria-hidden") === "true";
-		navMenu.setAttribute("aria-hidden", !ariaHidden);
-		navMenuOpen();
-	};
-	// When "Enter" is pressed on the hamburger, toggle the menu to visible on screen readers
-	hamburger.addEventListener("keypress", (event) => {
-		if (event.key === "Enter") {
-			toggleMenu(); // Toggle the aria-hidden attribute and add the nav-open class
-		}
-	});
-	// // When tabbing away from the menu, or ESC is pressed, close the menu
-	// navMenu.addEventListener("blur", () => {
-	// 	navMenu.setAttribute("aria-hidden", "true");
-	// });
-	/* TODO Fix this so that the Escape Button closes the nav menu */
-	navMenuCloseBtn.addEventListener("keypress", (event) => {
-		if (event.key === "Enter") {
-			if (navMenu.getAttribute("aria-expanded") === "true") {
-				navMenuClose();
-			}
-		}
-	});
-	document.addEventListener("keypress", (event) => {
-		if (event.key === "Escape") {
-			const isNavMenuOpen = navMenu.getAttribute("aria-expanded") === "true";
-			if (isNavMenuOpen) {
-				navMenuClose();
-			}
-		}
-	});
+	/*///////		EVENT LISTENERS		 ///////*/
 
 	hamburger.addEventListener("click", navMenuOpen);
 	navMenuCloseBtn.addEventListener("click", navMenuClose);
-	navLinks.forEach((navLink) =>
-		navLink.addEventListener("click", navMenuClose)
-	);
+	navItems.forEach((el) => el.addEventListener("click", navMenuClose));
+	navLinks.forEach((el) => el.addEventListener("click", delayPageLoad));
+
+	// When "Enter" is pressed on the hamburger, toggle the menu to visible on screen readers
+	hamburger.addEventListener("keypress", (event) => {
+		if (event.key === "Enter") {
+			navMenuOpen();
+		}
+	});
+	// // When tabbing away from the menu, or ESC is pressed, close the menu
+	/* TODO: create event listener for the BLUR event */
+	// navMenu.addEventListener("blur", () => {
+	// 	navMenu.setAttribute("aria-hidden", "true");
+	// });
+	navMenuCloseBtn.addEventListener("keypress", (event) => {
+		if (event.key === "Enter") {
+			navMenuClose();
+		}
+	});
+
+	/*////////// End of DOMContentLoaded //////////*/
 });

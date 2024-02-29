@@ -28,7 +28,7 @@
 
     <section id="section-members" class="text-center my-4 relative">
       <h2 class="text-4xl mb-10">Become a user for extra savings and benefits!</h2>
-      <a href="/signup" class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
+      <a tabindex="3" href="/signup" class="cta-btn bg-primary text-secondary-light rounded-full px-10 py-4 mt-4 mx-auto text-center shadow-black border-secondary-dark tracking-wider">Sign
         up now!</a>
       <div class="h-full flex flex-col tablet:flex-row justify-center items-center">
         <div class="card flex flex-col tablet:mx-10 justify-center items-center">

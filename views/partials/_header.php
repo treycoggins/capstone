@@ -1,7 +1,7 @@
 <div id="overlay" class="overlay-hidden absolute top-0 left-0 h-screen w-screen"></div>
 <header class="bg-primary border-b-4 border-secondary-dark h-min w-full flex flex-wrap pt-4 justify-between">
   <div class="mt-4 mx-4 text-secondary-dark tablet:grow">
-    <a tabindex="0" href="/">
+    <a aria-hidden="true" tabindex="-1" href="/">
       <img class="h-auto shrink-0 w-20 ms-4 mb-4" src="img/logo.png" alt="BitBuggy Logo" />
     </a>
   </div>

@@ -1,9 +1,10 @@
 <?php
 
-function login()  
+function login()
 {
     session_regenerate_id(true);    // Update session ID
     $_SESSION["logged_in"] = true;  // Set logged_in key to true
+    require_login();
 }
 function logout()   // Terminate the session
 {
@@ -27,7 +28,6 @@ function require_login($logged_in = false)  // Check if user is logged in
 {
     if ($logged_in === false) {     // If not logged in
         redirect(view("login.php"));  // Send to the login page
-        die();                         // Stop the rest of the page from running
     } else {
         redirect(view("account.php"));
     }
