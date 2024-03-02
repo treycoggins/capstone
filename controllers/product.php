@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+use Core\Response;
 
 require base_path("Core/db_connect.php");
 
@@ -22,4 +23,8 @@ try {
     die();
 }
     
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
+}
 require view("product.view.php");

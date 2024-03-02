@@ -1,12 +1,19 @@
 <?php
 
-function login()
+function login(): void
 {
-    session_regenerate_id(true);    // Update session ID
     $_SESSION["logged_in"] = true;  // Set logged_in key to true
-    require_login();
+    header("Location: /account");
 }
-function logout()   // Terminate the session
+
+
+function require_login(bool $logged_in = false): void  // Check if user is logged in
+{
+    if ($logged_in === false) {     // If not logged in
+        redirect("/login");  // Send to the login page
+    }
+}
+function logout(): void   // Terminate the session
 {
     $_SESSION = [];     // Clear contents of the session super global array
 
@@ -22,13 +29,6 @@ function logout()   // Terminate the session
     );    // Destroy the session cookie
 
     session_destroy();  // Destroy the session file
+    require(view("login.view.php"));
 }
 
-function require_login($logged_in = false)  // Check if user is logged in
-{
-    if ($logged_in === false) {     // If not logged in
-        redirect(view("login.php"));  // Send to the login page
-    } else {
-        redirect(view("account.php"));
-    }
-}

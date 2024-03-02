@@ -1,5 +1,4 @@
 <?php
-
 function base_path($path)
 {
     return BASE_PATH . $path;
@@ -8,9 +7,9 @@ function view($path)
 {
     return base_path("views/" . $path);
 }
-function redirect($url, $statusCode = 404)
+function redirect($uri)
 {
-    header("Location: " . $url, true, $statusCode);
+    header("Location: " . $uri);
 }
 // FORMATTING FUNCTIONS
 function html_escape($text): string
@@ -28,34 +27,34 @@ function format_date(string $string): string
 
 // ERROR AND EXCEPTION HANDLING FUNCTIONS
 // Convert errors to exceptions
-set_error_handler('handle_error');
-function handle_error($error_type, $error_message, $error_file, $error_line)
-{
-    throw new ErrorException($error_message, 0, $error_type, $error_file, $error_line); // Turn into ErrorException
-}
+// set_error_handler('handle_error');
+// function handle_error($error_type, $error_message, $error_file, $error_line)
+// {
+//     throw new ErrorException($error_message, 0, $error_type, $error_file, $error_line); // Turn into ErrorException
+// }
 
-// Handle exceptions - log exception and show error message (if server does not send error page listed in .htaccess)
-set_exception_handler('handle_exception');
-function handle_exception($e)
-{
-    error_log($e);                        // Log the error
-    http_response_code(500);              // Set the http response code
-    echo "<h1>Sorry, a problem occurred</h1>   
-          The site's owners have been informed. Please try again later.";
-    echo "</br>";
-    echo $e->getMessage();
-}
+// // Handle exceptions - log exception and show error message (if server does not send error page listed in .htaccess)
+// set_exception_handler('handle_exception');
+// function handle_exception($e)
+// {
+//     error_log($e);                        // Log the error
+//     http_response_code(500);              // Set the http response code
+//     echo "<h1>Sorry, a problem occurred</h1>   
+//           The site's owners have been informed. Please try again later.";
+//     echo "</br>";
+//     echo $e->getMessage();
+// }
 
-// Handle fatal errors
-register_shutdown_function('handle_shutdown');
-function handle_shutdown()
-{
-    $error = error_get_last();            // Check for error in script
-    if ($error !== null) {                // If there was an error next line throws exception
-        $e = new ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']);
-        handle_exception($e);             // Call exception handler
-    }
-}
+// // Handle fatal errors
+// register_shutdown_function('handle_shutdown');
+// function handle_shutdown()
+// {
+//     $error = error_get_last();            // Check for error in script
+//     if ($error !== null) {                // If there was an error next line throws exception
+//         $e = new ErrorException($error['message'], 0, $error['type'], $error['file'], $error['line']);
+//         handle_exception($e);             // Call exception handler
+//     }
+// }
 function flatten_array($array)
 {
     $result = [];

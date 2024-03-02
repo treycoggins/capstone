@@ -2,7 +2,6 @@
 
 $db_configs =
     [
-        // TODO Design $db_configs to be used as a nested array in product.php controller 
         'local_db' =>
         [
             'host' => '127.0.0.1',

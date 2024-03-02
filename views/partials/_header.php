@@ -11,7 +11,7 @@
       <i class="size-6 text-slate-800 absolute top-[-14px] right-[10px]" data-feather="search"></i>
     </button>
   </form>
-  <div tabindex="1" id="hamburger" class="flex flex-col p-6 cursor-pointer tablet:order-2">
+  <div tabindex="1" id="hamburger" class="flex flex-col m-6 cursor-pointer tablet:order-2">
     <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
     <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>
     <div class="bar h-1 w-9 bg-primary-dark m-1 rounded-md"></div>

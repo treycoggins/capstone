@@ -1,4 +1,7 @@
-<?php                               // Namespace declaration
+<?php  
+declare(strict_types=1);
+use Core\Database;
+                             // Namespace declaration
 class User
 {
     public $db;                                       // Holds ref to Database object

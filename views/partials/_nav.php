@@ -1,7 +1,6 @@
 <?php
 $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
 ?>
-
 <nav id="nav" aria-hidden="true" aria-expanded="false" class="nav-close absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
   <i tabindex="-1" id="navMenu-close-X" class="nav-item absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class="h-1/5 py-4 bg-secondary-light">
@@ -38,19 +37,19 @@ $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
       <a href="/contact" tabindex="-1">Contact</a>
     </li>
     <li class="nav-item flex ms-4 my-8">
-      <a href="/signup" tabindex="-1"><i class="size-5 mx-2" data-feather="user-check"></i></a>
-      <a href="/signup" tabindex="-1">Become a Member</a>
+      <a href="/register" tabindex="-1"><i class="size-5 mx-2" data-feather="user-check"></i></a>
+      <a href="/register" tabindex="-1">Become a Member</a>
     </li>
     <li class="nav-item flex ms-4 my-8">
       <a href="/account" tabindex="-1"><i class="size-5 mx-2" data-feather="bookmark"></i></a>
       <a href="/account" tabindex="-1">Your Account</a>
     </li>
     <li class="nav-item flex ms-4 my-8">
-      <a href="/list" tabindex="-1"><i class="size-5 mx-2" data-feather="gift"></i></a>
-      <a href="/list" tabindex="-1">Your Lists</a>
+      <a href="/cart" tabindex="-1"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
+      <a href="/cart" tabindex="-1">Your Cart</a>
     </li>
     <li class="nav-item flex ms-4 my-8">
-      <a href="/orders" tabindex="-1"><i class="size-5 mx-2" data-feather="shopping-cart"></i></a>
+      <a href="/orders" tabindex="-1"><i class="size-5 mx-2" data-feather="shopping-bag"></i></a>
       <a href="/orders" tabindex="-1">Your Orders</a>
     </li>
 

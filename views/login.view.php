@@ -1,16 +1,15 @@
-
 <?php require "partials/_head.php"; ?>
 
 
 <body class="bg-bg-light text-secondary-dark font-sans min-h-screen flex flex-col">
   <?php require "partials/_header.php" ?>
   <?php require "partials/_nav.php" ?>
-  <main class="flex flex-col w-full mx-4 my-16 tablet:mx-auto tablet:max grow">
-    <h1 class="text-4xl tablet:mx-auto tablet:text-7xl desktop:text-9xl tablet:my-8">Welcome</h1>
-    <div class="flex flex-col tablet:order-3 tablet:items-center">
-      <p class="text-lg mb-2">New to BitBuggy?</p>
-      <div class="mb-8">
-        <a tabindex="13" href="/signup" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs">Create an Account</a>
+  <main class="flex flex-col w-full tablet:mx-auto tablet:max grow">
+    <h1 class="text-4xl m-4 tablet:mx-auto tablet:text-7xl desktop:text-9xl tablet:my-8">Welcome</h1>
+    <div class="flex flex-col m-4 tablet:order-3 tablet:items-center">
+      <p class="text-lg">New to BitBuggy?</p>
+      <div class="mb-8 m-2">
+        <a tabindex="13" href="/register" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs">Create an Account</a>
       </div>
     </div>
     <section class="flex flex-col justify-center border-secondary-dark border-2 w-10/12 mx-auto my-8 p-4 laptop:w-7/12 desktop:max-w-2xl laptop:p-10">

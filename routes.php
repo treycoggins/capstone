@@ -1,18 +1,17 @@
 <?php
 
-$routes = [
-    "/" => "controllers/index.php",
-    "/home" => "controllers/index.php",
-    "/login" => "controllers/login.php",
-    "/about" => "controllers/about.php",
-    "/product" => "controllers/product.php",
-    "/contact" => "controllers/contact.php",
-    "/signup" => "controllers/signup.php",
-    "/account" => "controllers/account.php",
-    "/list" =>  "controllers/list.php",
-    "/orders" => "controllers/orders.php",
-    "/logout" => "controllers/logout.php",
-    "/register" => "controllers/register.php",
-];
+$router->get("/", "controllers/index.php");
+$router->get("/home", "controllers/index.php");
+$router->get("/favicon", "favicon.ico");
+$router->get("/login", "controllers/login.php");
+$router->get("/logout", "controllers/logout.php");
+$router->get("/register", "controllers/register.php");
+$router->get("/about", "controllers/about.php");
+$router->get("/product", "controllers/product.php");
+$router->get("/contact", "controllers/contact.php");
+$router->get("/account", "controllers/account.php");
+$router->get("/orders", "controllers/orders.php");
+$router->get("/cart", "controllers/cart.php");
 
-return $routes;
+$router->post("/login", "controllers/login.php");
+$router->post("/register", "controllers/register.php");

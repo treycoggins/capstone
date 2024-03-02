@@ -1,5 +1,5 @@
 <?php
-require "views/partials/_head.php";
+require "partials/_head.php";
 ?>
 
 <body class="bg-slate-200 font-sans w-full h-screen flex flex-col justify-center items-center">

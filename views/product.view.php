@@ -13,7 +13,9 @@
           <p class="text-xs m-2"><?= $product['description']; ?></p>
           <p class="">$<?= $product['price']; ?></p>
           <div class="flex justify-end">
-            <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
+            <form action="/orders" method="POST">
+              <button type="submit" class="bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</button>
+            </form>
           </div>
         </div>
       <?php }; ?>
