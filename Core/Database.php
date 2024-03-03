@@ -8,12 +8,7 @@ class Database
 
     public function __construct(array $config, string $username = null, string $password = null)
     {
-        if ($username === null) {
-            $username = $_ENV["MYSQL_USERNAME"];
-        }
-        if ($password === null) {
-            $password = $_ENV["MYSQL_PASSWORD"];
-        }
+
 
         $dsn = 'mysql:' . http_build_query($config, '', ';');
         $options = [

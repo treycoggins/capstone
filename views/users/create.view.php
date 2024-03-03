@@ -1,9 +1,9 @@
-<?php require 'partials/_head.php'; ?>
+<?php require view('partials/_head.php'); ?>
 </head>
 
 <body class="bg-bg-light font-sans h-screen flex flex-col">
-  <?php require "partials/_header.php" ?>
-  <?php require "partials/_nav.php" ?>
+  <?php require view("partials/_header.php"); ?>
+  <?php require view("partials/_nav.php") ?>
   <main class="pt-12 pb-12 grow">
     <section class="border-secondary-dark text-primary-light border w-10/12 tablet:w-3/12 m-auto p-2">
       <small class="text-secondary-dark">New to BitBuggy?</small>
@@ -39,4 +39,4 @@
 
     </section>
   </main>
-  <?php require 'partials/_footer.php' ?>
+  <?php require view("partials/_footer.php") ?>

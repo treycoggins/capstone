@@ -1229,6 +1229,7 @@ video {
   animation: fadeIn 1s ease;
   width: 100vw;
   opacity: 1;
+  z-index: 10;
 }
 
 .overlay-hidden {
@@ -1240,22 +1241,17 @@ video {
 #nav {
   left: -70vw;
   width: 70vw;
-  z-index: 20;
-}
-
-#navMenu-close-X {
-  z-index: -1;
 }
 
 .nav-open {
-  z-index: 1;
+  z-index: 20;
   transform: translateX(70vw);
   transition: transform 1s ease;
   animation: fadeIn;
 }
 
 .nav-close {
-  z-index: -1;
+  z-index: 20;
   transform: translateX(0vw);
   transition: transform 1s ease;
   animation: fadeOut;

@@ -1,8 +1,10 @@
 <?php
 declare(strict_types=1);
+use Core\App;
+use Core\Database;
 use Core\Response;
 
-require base_path("Core/db_connect.php");
+$db = App::container()->resolve(Database::class);
 
 // Verify the database object
 if ($db === null) {

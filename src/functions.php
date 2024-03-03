@@ -1,18 +1,25 @@
 <?php
-function base_path($path)
+declare(strict_types=1);
+
+// INIT FUNCTIONS
+function base_path(string $path)
 {
     return BASE_PATH . $path;
 }
-function view($path)
+
+function view(string $path, array $errors = [])
 {
-    return base_path("views/" . $path);
+    return base_path("views/" . $path, $errors);
 }
-function redirect($uri)
+
+function redirect(string $uri)
 {
     header("Location: " . $uri);
 }
+
+
 // FORMATTING FUNCTIONS
-function html_escape($text): string
+function html_escape(string $text): string
 {
     // Next line is an update for PHP 8.1 see https://phpandmysql.com/updates/passing-null-to-string-functions/
     $text = $text ?? ''; // If the value passed into function is null set $text to a blank string
@@ -55,23 +62,22 @@ function format_date(string $string): string
 //         handle_exception($e);             // Call exception handler
 //     }
 // }
-function flatten_array($array)
+function flatten_array(array $array): array
 {
     $result = [];
     foreach ($array as $key => $value) {
         // Check if the value is an array
         if (is_array($value)) {
-            // If it's an array, recursively flatten it
+            // If it's a nested array, recursively flatten it
             $flattened = flatten_array($value);
-            $result = array_merge($result, $flattened);
+            return $result = array_merge($result, $flattened);
         } else {
             // If not an array, add it to result with its key
-            $result[$key] = $value;
+            return $result[$key] = $value;
         }
     }
-    return $result;
 }
-function dd($var)
+function dd(string|object|int|bool $var): void
 {
     echo "<pre>";
     var_dump($var);
