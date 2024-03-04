@@ -931,7 +931,8 @@ video {
 }
 
 .border-secondary-dark{
-  border-color: rgb(175, 140, 74);;
+  --tw-border-opacity: 1;
+  border-color: rgb(175 140 74 / var(--tw-border-opacity));
 }
 
 .bg-bg-light{
@@ -955,12 +956,13 @@ video {
 }
 
 .bg-secondary-dark{
-  background-color: rgb(175, 140, 74);;
+  --tw-bg-opacity: 1;
+  background-color: rgb(175 140 74 / var(--tw-bg-opacity));
 }
 
 .bg-secondary-light{
   --tw-bg-opacity: 1;
-  background-color: rgb(196 161 93 / var(--tw-bg-opacity));
+  background-color: rgb(215 184 122 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200{
@@ -1155,12 +1157,13 @@ video {
 }
 
 .text-secondary-dark{
-  color: rgb(175, 140, 74);;
+  --tw-text-opacity: 1;
+  color: rgb(175 140 74 / var(--tw-text-opacity));
 }
 
 .text-secondary-light{
   --tw-text-opacity: 1;
-  color: rgb(196 161 93 / var(--tw-text-opacity));
+  color: rgb(215 184 122 / var(--tw-text-opacity));
 }
 
 .text-slate-500{
@@ -1226,6 +1229,7 @@ video {
   animation: fadeIn 1s ease;
   width: 100vw;
   opacity: 1;
+  z-index: 10;
 }
 
 .overlay-hidden {
@@ -1237,71 +1241,25 @@ video {
 #nav {
   left: -70vw;
   width: 70vw;
-  z-index: 20;
-}
-
-#navMenu-close-X {
-  z-index: -1;
 }
 
 .nav-open {
-  z-index: 1;
+  z-index: 20;
   transform: translateX(70vw);
   transition: transform 1s ease;
   animation: fadeIn;
 }
 
 .nav-close {
-  z-index: -1;
+  z-index: 20;
   transform: translateX(0vw);
   transition: transform 1s ease;
   animation: fadeOut;
 }
 
-.card {
-  max-height: 100%;
-  height: 350px;
-  width: 80%;
-  margin: 3rem 0 3rem 0;
-  border-radius: 5px;
-  background-color: var(--secondary-light);
-  box-shadow: 2px 2px 10px black;
-}
-
-.card:hover {
-  transform: translateY(-15px);
-  transition: 0.6s ease;
-}
-
 /*//////////////////	BUTTONS		/////////////////////////*/
 
-.btn {
-}
-
-.cta-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
-  transition: 1s ease;
-}
-
-.cta-btn:not(:hover) {
-  transition: 1s ease;
-}
-
-.fade-after-click {
-  background-color: var(--primary);
-  transition: background-color 1s ease;
-}
-
 /*//////////////////	UTILITY CLASSES		/////////////////////////*/
-
-.input-error {
-  color: rgb(185, 28, 28);
-}
-
-.validated {
-  color: var(--primary-light);
-}
 
 .hover\:bg-primary-light:hover{
   --tw-bg-opacity: 1;
@@ -1310,7 +1268,7 @@ video {
 
 .hover\:text-secondary-light:hover{
   --tw-text-opacity: 1;
-  color: rgb(196 161 93 / var(--tw-text-opacity));
+  color: rgb(215 184 122 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){
@@ -1406,3 +1364,4 @@ video {
     line-height: 1;
   }
 }
+

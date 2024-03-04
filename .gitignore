@@ -6,3 +6,4 @@ vendor/
 *.log
 .env
 /logs/
+.htaccess
