@@ -8,15 +8,15 @@
 	--primary-light: rgb(56, 120, 93);
 	--primary: rgb(23, 84, 66);
 	--primary-dark: rgb(6, 52, 39);
-	--secondary-light: rgb(254, 196, 80);
-	--secondary-dark: rgb(204, 157, 63);
+	--secondary-light: rgb(215, 184, 122);
+	--secondary-dark: rgb(175, 140, 74);
 }
 
 /* Focus styles for screen readers */
-/* :focus {
+:focus {
 	outline: 2px solid rgb(0, 59, 114);
 	background-color: rgba(0, 59, 114, 0.4);
-} */
+}
 
 /*/////////////////		ANIMATIONS		//////////d////////*/
 @keyframes fadeIn {
@@ -36,7 +36,7 @@
 	}
 }
 
-/*//////////////////	NAVIGATION BAR	/////////////////////////*/
+/*//////////////////	HOMEPAGE	/////////////////////////*/
 #overlay {
 	background-color: rgba(0, 0, 0, 0.9);
 	z-index: 10;
@@ -84,23 +84,24 @@
 
 /*//////////////////	BUTTONS		/////////////////////////*/
 .btn {
+}
+.cta-btn:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+	transition: 1s ease;
+}
+.cta-btn:not(:hover) {
+	transition: 1s ease;
+}
+.fade-after-click {
+	background-color: var(--primary);
+	transition: background-color 1s ease;
+}
 
+/*//////////////////	UTILITY CLASSES		/////////////////////////*/
+.input-error {
+	color: rgb(185, 28, 28);
 }
-.btn:hover {
-	border: none;
-	color: var(--primary-dark);
-	transform: translateY(-3px);
-	background-color: var(--secondary-light);
-	transition: all 1s ease;
-}
-.btn:not(:hover) {
-	color: var(--primary);
-	transform: translateY(2px);
-	background-color: var(--secondary-dark);
-	transition: all 1s ease;
-}
-.btn:active {
-	transform: translateY(1px);
-	box-shadow: none;
-	transition: all .5s ease;
+.validated {
+	color: var(--primary-light);
 }

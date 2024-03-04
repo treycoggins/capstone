@@ -5,7 +5,6 @@
   "main": "index.php",
   "scripts": {
     "build": "npx tailwindcss -i ./main.css -o ./public/css/styles.css --watch",
-    "build-static": "npx tailwindcss -i ./static/main.css -o ./static/css/styles.css --watch"
   },
   "repository": {
     "type": "git",
