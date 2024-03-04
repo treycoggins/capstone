@@ -24,7 +24,7 @@ if ($_SERVER["HTTP_HOST"] === "127.0.0.1:8080") {
         http_response_code(Response::SERVER_ERROR);
         require view(Response::SERVER_ERROR . ".php");
         error_log("PDO Exception: " . $error->getMessage());
-        die();
+        exit();
     }
 }
 

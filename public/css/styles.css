@@ -931,8 +931,7 @@ video {
 }
 
 .border-secondary-dark{
-  --tw-border-opacity: 1;
-  border-color: rgb(175 140 74 / var(--tw-border-opacity));
+  border-color: rgb(204, 157, 63);;
 }
 
 .bg-bg-light{
@@ -956,13 +955,12 @@ video {
 }
 
 .bg-secondary-dark{
-  --tw-bg-opacity: 1;
-  background-color: rgb(175 140 74 / var(--tw-bg-opacity));
+  background-color: rgb(204, 157, 63);;
 }
 
 .bg-secondary-light{
   --tw-bg-opacity: 1;
-  background-color: rgb(215 184 122 / var(--tw-bg-opacity));
+  background-color: rgb(254 196 80 / var(--tw-bg-opacity));
 }
 
 .bg-slate-200{
@@ -1157,13 +1155,12 @@ video {
 }
 
 .text-secondary-dark{
-  --tw-text-opacity: 1;
-  color: rgb(175 140 74 / var(--tw-text-opacity));
+  color: rgb(204, 157, 63);;
 }
 
 .text-secondary-light{
   --tw-text-opacity: 1;
-  color: rgb(215 184 122 / var(--tw-text-opacity));
+  color: rgb(254 196 80 / var(--tw-text-opacity));
 }
 
 .text-slate-500{
@@ -1185,16 +1182,16 @@ video {
   --primary-light: rgb(56, 120, 93);
   --primary: rgb(23, 84, 66);
   --primary-dark: rgb(6, 52, 39);
-  --secondary-light: rgb(215, 184, 122);
-  --secondary-dark: rgb(175, 140, 74);
+  --secondary-light: rgb(254, 196, 80);
+  --secondary-dark: rgb(204, 157, 63);
 }
 
 /* Focus styles for screen readers */
 
-:focus {
-  outline: 2px solid rgb(0, 59, 114);
-  background-color: rgba(0, 59, 114, 0.4);
-}
+/* :focus {
+	outline: 2px solid rgb(0, 59, 114);
+	background-color: rgba(0, 59, 114, 0.4);
+} */
 
 /*/////////////////		ANIMATIONS		//////////d////////*/
 
@@ -1218,7 +1215,7 @@ video {
   }
 }
 
-/*//////////////////	HOMEPAGE	/////////////////////////*/
+/*//////////////////	NAVIGATION BAR	/////////////////////////*/
 
 #overlay {
   background-color: rgba(0, 0, 0, 0.9);
@@ -1277,29 +1274,25 @@ video {
 .btn {
 }
 
-.cta-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
-  transition: 1s ease;
+.btn:hover {
+  border: none;
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+  background-color: var(--secondary-light);
+  transition: all 1s ease;
 }
 
-.cta-btn:not(:hover) {
-  transition: 1s ease;
+.btn:not(:hover) {
+  color: var(--primary);
+  transform: translateY(2px);
+  background-color: var(--secondary-dark);
+  transition: all 1s ease;
 }
 
-.fade-after-click {
-  background-color: var(--primary);
-  transition: background-color 1s ease;
-}
-
-/*//////////////////	UTILITY CLASSES		/////////////////////////*/
-
-.input-error {
-  color: rgb(185, 28, 28);
-}
-
-.validated {
-  color: var(--primary-light);
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+  transition: all .5s ease;
 }
 
 .hover\:bg-primary-light:hover{
@@ -1309,7 +1302,7 @@ video {
 
 .hover\:text-secondary-light:hover{
   --tw-text-opacity: 1;
-  color: rgb(215 184 122 / var(--tw-text-opacity));
+  color: rgb(254 196 80 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px){

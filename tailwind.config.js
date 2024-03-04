@@ -4,13 +4,15 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Poppins", "Helvetica", "Arial", "sans-serif"],
+      serif: ["Sorts Mill Goudy", "Georgia", "serif"],
+      display_serif: ["Abril Fatface", "Georgia", "serif"],
       display: ["Orbitron"],
     },
     extend: {
       colors: {
         secondary: {
-          light: "#d7b87a",
-          dark: "#af8c4a",
+          light: "rgb(254, 196, 80)",
+          dark: "rgb(204, 157, 63);",
         },
         primary: {
           light: "#38785d",

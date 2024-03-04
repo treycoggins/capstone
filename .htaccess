@@ -5,20 +5,23 @@ php_value   error_reporting -1
 php_value   error_log   /error.log
 
 # Redirect to error pages
-ErrorDocument 404 404.php
-ErrorDocument 500 500.php
+ErrorDocument 404 views/404.php
+ErrorDocument 500 views/500.php
 
 # Disable directory browsing
 Options -Indexes
 
 # Set the default page
-DirectoryIndex index.php index.html
+DirectoryIndex index.php
 
+RewriteEngine on
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{HTTP_HOST} ^(capstone.)?surfturkey.net
+RewriteCond %{REQUEST_URI} !^/public/
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /public/$1
+RewriteCond %{HTTP_HOST} ^(capstone.)?surfturkey.net
+RewriteRule ^(/)?$ public/index.php [L]
 
-#Rewrite all requests to public
-RewriteRule ^(.*)$ public/ [L]
 
