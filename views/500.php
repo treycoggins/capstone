@@ -8,7 +8,7 @@
         <a href="/">
             <p class="text-9xl text-slate-500">500</p>
             <h1 class="font-bold inline">We are experiencing problems fulfilling your request...</h1>
-            <p>The site's administrators have been informed.'</p>
+            <p>The site's administrators have been informed.</p>
             <p class="">Please return to the home page.
                 <i data-feather='arrow-right' class="size-4 inline"></i>
                 <i data-feather="home" class="size-4 inline"></i>

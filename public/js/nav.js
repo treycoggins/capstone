@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	const navMenu = document.querySelector("#nav");
 	const overlay = document.querySelector("#overlay");
 	const navMenuCloseBtn = document.querySelector("#navMenu-close-X");
-	const navItems = [...document.querySelectorAll(".nav-item")];
 	const navLinks = [...document.getElementsByClassName(".nav-link")];
 
 	// Get all focusable elements
@@ -89,14 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	const toggleTabIndexForNav = () => {
-		navItems.forEach((item) => {
-			const children = Array.from(item.children);
+		navLinks.forEach((link) => {
 			if (expanded) {
-				item.setAttribute("tabindex", "0"); // Make parent navItem focusable
-				children.forEach((child) => child.setAttribute("tabindex", "-1")); // Make children not focusable
+				link.setAttribute("tabindex", "0");
 			} else {
-				item.setAttribute("tabindex", "-1"); // Make parent navItem not focusable
-				children.forEach((child) => child.setAttribute("tabindex", "-1")); // Make children focusable
+				link.setAttribute("tabindex", "-1");
 			}
 		});
 	};
@@ -105,8 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	hamburger.addEventListener("click", navMenuOpen);
 	navMenuCloseBtn.addEventListener("click", navMenuClose);
-	navItems.forEach((el) => el.addEventListener("click", navMenuClose));
-	navLinks.forEach((el) => el.addEventListener("click", delayPageLoad));
+	navLinks.forEach((link) => link.addEventListener("click", navMenuClose));
 
 	// When "Enter" is pressed on the hamburger, toggle the menu to visible on screen readers
 	hamburger.addEventListener("keypress", (event) => {
