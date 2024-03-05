@@ -8,12 +8,6 @@
 #ErrorDocument 404 /views/404.php
 #ErrorDocument 500 /views/500.php
 
-# Disable directory browsing
-Options Indexes FollowSymLinks
-
-# Set the default page
-DirectoryIndex index.php index.html
-
 # Rewrite all requests to index
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
