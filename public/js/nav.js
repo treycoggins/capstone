@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	const navMenu = document.querySelector("#nav");
 	const overlay = document.querySelector("#overlay");
 	const navMenuCloseBtn = document.querySelector("#navMenu-close-X");
-	const navLinks = [...document.getElementsByClassName(".nav-link")];
+	const navLinks = document.getElementsByClassName(".nav-link");
 
 	// Get all focusable elements
 	const focusableElements = document.querySelectorAll(
-		"[href], button, input, select, textarea, [tabindex]:not([tabindex='-1'])"
+		"[href], button, input, select, textarea, [tabindex]"
 	);
 	let expanded = navMenu.getAttribute("aria-expanded") === "true";
 
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		disableTabbingForPage();
 		navMenu.setAttribute("aria-expanded", expanded);
 		navMenu.setAttribute("aria-hidden", !expanded);
-		toggleTabIndexForNav();
 		toggleOverlayAndNavMenu();
 	};
 	const navMenuClose = () => {
@@ -26,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		navMenu.setAttribute("aria-expanded", expanded);
 		navMenu.setAttribute("aria-hidden", !expanded);
 		reenableTabbingForPage();
-		toggleTabIndexForNav();
 		toggleOverlayAndNavMenu();
 	};
 
@@ -47,16 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		overlay.addEventListener("click", navMenuClose);
 	};
 
-	// navLinks.forEach((link) => {
-	// 	link.addEventListener("click", (event) => {
-	// 		event.preventDefault();
-	// 		navMenu.addEventListener("transitioned", () => {
-	// 			const targetURL = link.getAttribute("href");
-	// 			window.location.href = targetURL;
-	// 		});
-	// 	});
-	// });
-
 	/* ACCESSIBLE KEYBOARD NAVIGATION (TAB, ENTER, ESC) */
 
 	// Disable tabbing for background page when nav is open */
@@ -68,10 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
 				// Save original tabindex value
 				el.setAttribute(
 					"data-original-tabindex",
-					el.getAttribute("tabindex") || "-1"
+					el.getAttribute("tabindex") || "0"
 				);
 				// Set tabindex to -1
 				el.setAttribute("tabindex", "-1");
+			} else {
+				el.setAttribute("tabindex", "0");
 			}
 		});
 	};
@@ -87,21 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	};
 
-	const toggleTabIndexForNav = () => {
-		navLinks.forEach((link) => {
-			if (expanded) {
-				link.setAttribute("tabindex", "0");
-			} else {
-				link.setAttribute("tabindex", "-1");
-			}
-		});
-	};
-
 	/*///////		EVENT LISTENERS		 ///////*/
 
 	hamburger.addEventListener("click", navMenuOpen);
 	navMenuCloseBtn.addEventListener("click", navMenuClose);
-	navLinks.forEach((link) => link.addEventListener("click", navMenuClose));
 
 	// When "Enter" is pressed on the hamburger, toggle the menu to visible on screen readers
 	hamburger.addEventListener("keypress", (event) => {
@@ -109,11 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			navMenuOpen();
 		}
 	});
-	// // When tabbing away from the menu, or ESC is pressed, close the menu
-	/* TODO: create event listener for the BLUR event */
-	// navMenu.addEventListener("blur", () => {
-	// 	navMenu.setAttribute("aria-hidden", "true");
-	// });
 	navMenuCloseBtn.addEventListener("keypress", (event) => {
 		if (event.key === "Enter") {
 			navMenuClose();

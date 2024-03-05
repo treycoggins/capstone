@@ -5,8 +5,8 @@ $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
   <i tabindex="-1" id="navMenu-close-X" class="nav-link absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class="h-1/5 py-4 bg-secondary-light">
     <div class="flex p-4">
-      <div tabindex="-1" class="flex justify-end me-3">
-        <a href="/login"><i data-feather="user"></i></a>
+      <div class="flex justify-end me-3">
+        <i data-feather="user"></i>
         <?= $logged_in ?
           '<a tab-index="-1" href="/logout"><p class="nav-link self-center text-sm pe-2">Sign out</p></a>'
           :
@@ -49,7 +49,7 @@ $logged_in = $_SESSION['logged_in'] ?? false;    // Check if user is logged in
       <a href="/cart" class="nav-link" tabindex="-1">Your Cart</a>
     </li>
     <li class="flex ms-4 my-8">
-     <i class="size-5 mx-2" data-feather="shopping-bag"></i>
+      <i class="size-5 mx-2" data-feather="shopping-bag"></i>
       <a href="/orders" class="nav-link" tabindex="-1">Your Orders</a>
     </li>
 
