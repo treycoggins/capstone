@@ -582,8 +582,8 @@ video {
   order: 3;
 }
 
-.col-span-10{
-  grid-column: span 10 / span 10;
+.col-span-8{
+  grid-column: span 8 / span 8;
 }
 
 .col-start-2{
@@ -1316,20 +1316,8 @@ video {
     width: 33.333333%;
   }
 
-  .tablet\:w-5\/12{
-    width: 41.666667%;
-  }
-
   .tablet\:w-3\/12{
     width: 25%;
-  }
-
-  .tablet\:w-7\/12{
-    width: 58.333333%;
-  }
-
-  .tablet\:w-8\/12{
-    width: 66.666667%;
   }
 
   .tablet\:grow{

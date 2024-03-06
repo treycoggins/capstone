@@ -1,10 +1,10 @@
 <?php require view('partials/_head.php'); ?>
 </head>
 
-<body class="bg-bg-light font-sans h-screen flex flex-col">
+<body class="bg-bg-light font-sans h-screen flex flex-col justify-center items-center">
   <?php require view("partials/_header.php"); ?>
   <?php require view("partials/_nav.php") ?>
-  <main class="pt-12 pb-12 grow grid grid-cols-12">
+  <main class="pt-12 pb-12 grow">
     <section class="border-secondary-dark text-primary-light border m-auto p-2">
       <small class="text-secondary-dark">New to BitBuggy?</small>
       <p class="font-bold  m-0">Create an Account.</>
