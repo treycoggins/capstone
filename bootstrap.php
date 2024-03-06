@@ -7,7 +7,7 @@ use Core\Response;
 
 $container = new Container();
 
-if ($_SERVER["HTTP_HOST"] === "127.0.0.1:8080") {
+if ($_SERVER["SERVER_ADDR"] === "127.0.0.1") {
     $container->bind("Core\Database", function () {
         $config = require base_path("config/config.php");
         return new Database($config["local_db"], "treycoggins", "hrdcndy%5t");
@@ -17,7 +17,7 @@ if ($_SERVER["HTTP_HOST"] === "127.0.0.1:8080") {
     try {
         $container->bind("Core\Database", function () {
             $config = require base_path("config/config.php");
-            return new Database($config["local_db"], "treycoggins", "hrdcndy%5t");
+            return new Database($config["remote_db"], "surfnoqi_trey", "hrdcndy%5t");
         });
         $db = $container->resolve("Core\Database");
     } catch (PDOException $error) {

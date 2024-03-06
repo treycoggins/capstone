@@ -37,13 +37,7 @@ $errors['password'] = Validate::isPassword($user['password']) ? "" :
 $errors["confirmed_password"] = $user["password"] === $confirmed_password ? "" : "Passwords do not match";
 $invalid = implode($errors);
 
-if ($errors) {
-    require view("users/create.view.php", [
-        "errors" => $errors
-    ]);
-}
-
-$db = App::container()->resolve(Database::class);
+$db = App::resolve(Database::class);
 
 if (!$invalid) {
     // Create a User object
@@ -55,7 +49,7 @@ if (!$invalid) {
         $errors["email"] = "Email address already in use";
         $errors["username"] = "That username is already in use";
     } else {
-        require view("login.view.php", $errors);
+        require view("login.view.php");
     }
 } else {
     require_once view("users/create.view.php");

@@ -1,6 +1,8 @@
 <?php
-
-
+use Core\App;
+use Core\Database;
+$logged_in = $_SESSION["logged_in"] ?? false;
+$db = App::resolve(Database::class);
 function authenticate($username, $password, $db)
 {
     // // Write a SQL query statement to check the DB for $username_sent
@@ -14,14 +16,16 @@ function authenticate($username, $password, $db)
 }
 function login(): void
 {
-    $_SESSION["logged_in"] = true;  // Set logged_in key to true
-    header("Location: /account");
+    $_SESSION["logged_in"] = true;
+    redirect("/account");
+    exit();
 }
 
 
-function require_login(): void  // Check if user is logged in
+function require_login(): void  
 {
-    redirect("/login");  // Send to the login page
+    redirect("/login");
+    exit();
 }
 
 function logout(): void   // Terminate the session
@@ -40,5 +44,6 @@ function logout(): void   // Terminate the session
     );    // Destroy the session cookie
 
     session_destroy();  // Destroy the session file
-    require(view("login.view.php"));
+    require view("login.view.php");
+    exit();
 }

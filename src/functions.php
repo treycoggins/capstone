@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 // INIT FUNCTIONS
@@ -9,7 +10,7 @@ function base_path(string $path)
 
 function view(string $path, array $errors = [])
 {
-    return base_path("views/" . $path, $errors);
+    return base_path("views/" . $path);
 }
 
 function redirect(string $uri)
@@ -62,25 +63,10 @@ function format_date(string $string): string
 //         handle_exception($e);             // Call exception handler
 //     }
 // }
-function flatten_array(array $array): array
-{
-    $result = [];
-    foreach ($array as $key => $value) {
-        // Check if the value is an array
-        if (is_array($value)) {
-            // If it's a nested array, recursively flatten it
-            $flattened = flatten_array($value);
-            return $result = array_merge($result, $flattened);
-        } else {
-            // If not an array, add it to result with its key
-            return $result[$key] = $value;
-        }
-    }
-}
 function dd(string|object|int|bool $var): void
 {
     echo "<pre>";
     var_dump($var);
     echo "</pre>";
-    die();
+    exit();;
 }

@@ -4,12 +4,7 @@ use Core\App;
 use Core\Database;
 use Core\Response;
 
-$db = App::container()->resolve(Database::class);
-
-// Verify the database object
-if ($db === null) {
-    throw new Exception("Database connection null");
-}
+$db = App::resolve(Database::class);
 try {
     // Input the sql and execute with the runSql method of the Database class
     $sql = "SELECT * FROM products;";
@@ -17,16 +12,7 @@ try {
 } catch (Throwable $error) {
     error_log($error->getMessage());
     http_response_code(Response::SERVER_ERROR);
-    redirect(view("500.php"), Response::SERVER_ERROR);
-    die();
-} catch (PDOException $error) {
-    http_response_code(Response::SERVER_ERROR);
-    redirect(view("500.php"), Response::SERVER_ERROR);
-    die();
-}
-    
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    
+    redirect(view("500.php"));
+    exit();
 }
 require view("product.view.php");
