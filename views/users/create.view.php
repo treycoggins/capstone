@@ -1,7 +1,7 @@
 <?php require view('partials/_head.php'); ?>
 </head>
 
-<body class="bg-bg-light font-sans h-screen flex flex-col justify-center items-center">
+<body class="bg-bg-light font-sans h-full flex flex-col justify-center items-center">
   <?php require view("partials/_header.php"); ?>
   <?php require view("partials/_nav.php") ?>
   <main class="pt-12 pb-12 grow">
@@ -9,9 +9,7 @@
       <small class="text-secondary-dark">New to BitBuggy?</small>
       <p class="font-bold  m-0">Create an Account.</>
         <?php
-
         if (isset($_SESSION["errors"]) && !empty($_SESSION["errors"])) {
-          $errors = $_SESSION["errors"];
           echo '<p class="text-sm">There were errors in the form submission. Please correct the form and try again.</p>';
         }
         ?>

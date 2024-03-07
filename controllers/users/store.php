@@ -36,7 +36,6 @@ $errors['password'] = Validate::isPassword($user['password']) ? "" :
         </ul>";
 $errors["confirmed_password"] = $user["password"] === $confirmed_password ? "" : "Passwords do not match";
 $invalid = implode($errors);
-
 $db = App::resolve(Database::class);
 
 if (!$invalid) {
