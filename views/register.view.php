@@ -1,7 +1,7 @@
 <?php require view('partials/_head.php'); ?>
 </head>
 
-<body class="bg-bg-light font-sans h-screen w-screen">
+<body class="bg-bg-light font-sans h-screen w-screen flex flex-col">
   <?php require view("partials/_header.php"); ?>
   <?php require view("partials/_nav.php") ?>
   <main class="w-full py-12 grow flex flex-col items-center justify-center">
