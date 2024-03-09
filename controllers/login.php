@@ -1,11 +1,17 @@
 <?php
 
 declare(strict_types=1);
-
+use Core\App;
+use Core\Database;
 use Core\Validate;
+use Models\Session;
+use Models\User;
 
-require base_path("models/login.model.php");   // Bring in login logic
+$session = App::resolve(Session::class);
+$db = App::resolve(Database::class);
+$user = new User($db);
 
+$error = "";
 $username_sent;
 $password_sent;
 
@@ -16,15 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {   // If the login form was submitte
     // verify user submitted credentials
     $isValidUsername = Validate::isText($username_sent);
     $isValidPassword = Validate::isPassword($password_sent);
-    if (!$isValidUsername || !$isValidPassword) {
-        echo "Credentials invalid";
-        exit();
+    if (!$isValidUsername || !$isValidPassword || !$user) {
+        $errors = "Invalid username or password";
 
     } else {
-        authenticate($username_sent, $password_sent, $db);
+        $user->login($username_sent, $password_sent);
+        if ($user) {
+            $session->set("logged_in", true);
+            redirect("/account");
+            exit();
+        } else {
+            $errors = "Invalid username or password";
+        }
     }
 }
-
-
-
 require view("login.view.php");

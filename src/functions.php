@@ -63,7 +63,7 @@ function format_date(string $string): string
 //         handle_exception($e);             // Call exception handler
 //     }
 // }
-function dd(string|object|int|bool $var): void
+function dd(string|object|int|bool|array $var): void
 {
     echo "<pre>";
     var_dump($var);

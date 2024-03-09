@@ -1,3 +1,3 @@
 <?php
 
-require view("users/create.view.php");
+require view("register.view.php");

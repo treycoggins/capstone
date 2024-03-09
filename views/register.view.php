@@ -1,11 +1,11 @@
 <?php require view('partials/_head.php'); ?>
 </head>
 
-<body class="bg-bg-light font-sans h-full flex flex-col justify-center items-center">
+<body class="bg-bg-light font-sans h-screen w-screen">
   <?php require view("partials/_header.php"); ?>
   <?php require view("partials/_nav.php") ?>
-  <main class="pt-12 pb-12 grow">
-    <section class="border-secondary-dark text-primary-light border m-auto p-2">
+  <main class="w-full py-12 grow flex flex-col items-center justify-center">
+    <section class="w-10/12 tablet:w-1/2 laptop:max-w-xl border-secondary-dark text-primary-light border p-2">
       <small class="text-secondary-dark">New to BitBuggy?</small>
       <p class="font-bold  m-0">Create an Account.</>
         <?php

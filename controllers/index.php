@@ -1,4 +1,9 @@
 <?php
 
+use Core\App;
+use Models\Session;
 
-require view("index.view.php"); 
+$session = App::resolve(Session::class);
+
+
+require view("index.view.php");

@@ -6,7 +6,7 @@ use Core\Response;
 
 $db = App::resolve(Database::class);
 try {
-    // Input the sql and execute with the runSql method of the Database class
+    // Input the sql and execute with the runSQL method of the Database class
     $sql = "SELECT * FROM products;";
     $products = $db->runSQL($sql)->fetchAll();
 } catch (Throwable $error) {

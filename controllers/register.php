@@ -4,13 +4,8 @@ declare(strict_types=1);
 
 use Core\App;
 use Core\Database;
-use Models\Session;
 use Models\User;
 use Core\Validate;
-
-$db = App::resolve(Database::class);
-$session = App::resolve(Session::class);
-$newUser = new User($db);
 
 $user = [];
 $errors = [];
@@ -40,22 +35,22 @@ $errors['password'] = Validate::isPassword($user['password']) ? "" :
         <li>special characters</li>
         </ul>";
 $errors["confirmed_password"] = $user["password"] === $confirmed_password ? "" : "Passwords do not match";
-$session->set("errors", $errors);
 $invalid = implode($errors);
 
+$db = App::resolve(Database::class);
 
 if (!$invalid) {
+    // Create a User object
+    $newUser = new User($db);
     // Try to insert a new user and return a bool
     $result = $newUser->create($user);
 
-    if ($result === false) {  // Username already in use
+    if ($result = false) {  // Username or email already in use
+        $errors["email"] = "Email address already in use";
         $errors["username"] = "That username is already in use";
-        dd($errors); 
     } else {
-        $session->set("success", "You are registered as {$user["username"]}.");
-        dd($session);
         require view("login.view.php");
     }
 } else {
-    require_once view("register.view.php");
+    require_once view("users/create.view.php");
 }

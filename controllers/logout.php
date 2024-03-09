@@ -1,7 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
-require base_path("models/login.model.php");
-logout();
+use Core\App;
+use Models\Session;
 
-?>
+$session = App::resolve(Session::class);
+$session->destroy();
+require view("logout.view.php");
