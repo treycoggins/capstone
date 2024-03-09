@@ -14,7 +14,7 @@
         }
         ?>
       <form id="registration-form" class="flex flex-col text-sm w-full" action="/register" method="POST">
-        <input id="fname" name="fname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="First Name" value="<?= isset($_POST['fname']) ? html_escape($_POST['fname']) : ''; ?>">
+        <input id="fname" name="fname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="First Name" value="">
         <span class="text-sm text-red-700 mx-2"><?= isset($errors['fname']) ? $errors['fname'] : ''; ?></span>
 
         <input id="lname" name="lname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Last Name">

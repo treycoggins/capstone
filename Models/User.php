@@ -20,8 +20,8 @@ class User
     public function create(array $user): bool
     {
         // Check database for chosen username
-        $sql = "SELECT user_id FROM users WHERE username = :username;";
-        $found = $this->db->runSQL($sql, [":username" => $user["username"]]);
+        $sql = "SELECT * FROM users WHERE username = :username;";
+        $found = $this->db->runSQL($sql, [":username" => $user["username"]])->fetch();
         if (!$found) {
             $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);  // Hash password
             try {                                                          // Try to add user

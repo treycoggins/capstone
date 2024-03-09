@@ -6,12 +6,14 @@ class Session
 {
     public $fname;
     public $role;
+    public $logged_in;
 
     public function __construct()
     {
         session_start();
         $this->fname = $_SESSION["fname"] ?? "";
         $this->role = $_SESSION["role"] ?? "Guest";
+        $this->logged_in = $_SESSION["logged_in"] ?? false;
     }
     public function set($key, $value)
     {

@@ -16,12 +16,12 @@ $user = [];
 $errors = [];
 
 // Get form data
-$user['fname'] = $_POST['fname'];
-$user['lname'] = $_POST['lname'];
-$user['email'] = $_POST['email'];
-$user['username'] = $_POST['username'];
-$user['password'] = $_POST['password'];
-$confirmed_password = $_POST['confirmed'] ?? "";
+$user['fname'] = filter_var($_POST['fname'], FILTER_SANITIZE_SPECIAL_CHARS);
+$user['lname'] = filter_var($_POST['lname'], FILTER_SANITIZE_SPECIAL_CHARS);
+$user['email'] = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+$user['username'] = filter_var($_POST['username'], FILTER_SANITIZE_SPECIAL_CHARS);
+$user['password'] = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
+$confirmed_password = filter_var($_POST['confirmed'], FILTER_SANITIZE_SPECIAL_CHARS) ?? "";
 
 
 // Validate form data
@@ -49,11 +49,10 @@ if (!$invalid) {
     $result = $newUser->create($user);
 
     if ($result === false) {  // Username already in use
-        $errors["username"] = "That username is already in use";
-        dd($errors); 
+        $errors["username"] = "That username is already in use.";
+        require view("register.view.php");
     } else {
         $session->set("success", "You are registered as {$user["username"]}.");
-        dd($session);
         require view("login.view.php");
     }
 } else {

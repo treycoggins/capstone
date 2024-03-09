@@ -4,7 +4,6 @@
   <?php require "partials/_nav.php" ?>
   <main class="w-full py-6 grow flex flex-col items-center justify-center">
     <h1 class="text-4xl my-2 text-center tablet:text-7xl desktop:text-9xl">Welcome</h1>
-    <?= isset($session["success"]) ? '<p class="text-primary-light>' . $session["success"] . '</p>' : ""; ?>
     <div class="flex flex-col m-4 tablet:order-3 tablet:items-center">
       <p class="text-lg">New to BitBuggy?</p>
       <a tabindex="13" href="/register" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs text-center">Create an Account</a>
@@ -17,9 +16,6 @@
         <input tabindex="10" id="username" name="username" type="text" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
         <label for="password" class="ms-2">Password</label>
         <input tabindex="11" type="password" id="password" name="password" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
-    <?php dd($errors) ?>
-
-        <?= isset($session["errors"]) ? '<p class="text-red-700 text-center">' . $session["errors"] . '</p>' : "" ?>
         <button tabindex="12" type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none my-4 rounded-md">Continue</button>
       </form>
     </section>
