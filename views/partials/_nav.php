@@ -1,12 +1,7 @@
+
 <nav id="nav" aria-hidden="true" aria-expanded="false" class="nav-close absolute top-0 h-screen bg-secondary-dark text-primary flex flex-col">
   <i tabindex="-1" id="navMenu-close-X" class="nav-link absolute stroke-primary-dark top-4 right-4 size-8 tablet:size-14 cursor-pointer" data-feather="x"></i>
   <div class="h-1/5 py-4 bg-secondary-light">
-    <div class="flex p-4">
-      <div class="flex justify-end me-3">
-        <i data-feather="user"></i>
-          <a tabindex="-1" href="/login"><p class="nav-link self-center text-sm pe-2">Sign in</p></a>
-      </div>
-    </div>
     <div class="ms-4">
       <p class="text-xl">Browse</p>
       <p class="font-bold text-2xl">BitBuggy</p>

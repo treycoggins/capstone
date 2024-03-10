@@ -5,15 +5,17 @@ namespace Models;
 class Session
 {
     public $fname;
-    public $role;
-    public $logged_in;
 
     public function __construct()
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $this->fname = $_SESSION["fname"] ?? "";
-        $this->role = $_SESSION["role"] ?? "Guest";
-        $this->logged_in = $_SESSION["logged_in"] ?? false;
+    }
+    public function get_session()
+    {
+        return $_SESSION;
     }
     public function set($key, $value)
     {

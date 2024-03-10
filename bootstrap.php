@@ -5,7 +5,6 @@ use Core\Container;
 use Core\Database;
 use Core\Response;
 use Models\Session;
-use Models\User;
 
 $container = new Container();
 
@@ -34,5 +33,6 @@ $container->bind("Models\Session", function(){
 });
 
 App::setContainer($container);
+
 
 

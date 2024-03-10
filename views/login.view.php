@@ -16,6 +16,7 @@
         <input tabindex="10" id="username" name="username" type="text" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
         <label for="password" class="ms-2">Password</label>
         <input tabindex="11" type="password" id="password" name="password" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
+        <?= $session->get("error") === true ? '<p class="text-red-700 text-center">Invalid username or password</p>' : "" ?>
         <button tabindex="12" type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none my-4 rounded-md">Continue</button>
       </form>
     </section>
