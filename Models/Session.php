@@ -4,34 +4,25 @@ namespace Models;
 
 class Session
 {
-    public $fname;
-
     public function __construct()
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        $this->fname = $_SESSION["fname"] ?? "";
     }
-    public function get_session()
+    public function get_session(): array
     {
         return $_SESSION;
     }
-    public function set($key, $value)
+    public function set_property($key, $value)
     {
         $_SESSION[$key] = $value;
     }
-    public function get($key)
+    public function get_property($key)
     {
         return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
     }
-    public function create($user)
-    {
-        session_regenerate_id(true);
-        $_SESSION["fname"] = $user["fname"];
-        $_SESSION["role"] = $user["role"];
-    }
-    public function destroy()
+    public function destroy(): void
     {
         $_SESSION = [];                                  // Empty $_SESSION super global
         $param    = session_get_cookie_params();         // Get session cookie parameters
@@ -44,6 +35,6 @@ class Session
             $param['secure'],
             $param['httponly']
         );       // Clear session cookie
-        session_destroy();                               // Destroy the session
+        session_destroy();
     }
 }

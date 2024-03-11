@@ -10,12 +10,28 @@ use PDOException;
 class User
 {
     public $db;                                       // Holds ref to Database object
+    public $fname = "";
+    public $lname = null;
+    public $email;
+    public $username;
 
     public function __construct(Database $db)
     {
         $this->db = $db;                                 // Add ref to Database object
     }
-
+    public function set_user_props($props)
+    {
+        foreach ($props as $key => $value) {
+            if (property_exists($this, $key)) {
+                $this->$key = $value;
+            }
+        }
+    }
+    public function get_user_prop($key) {
+        if (property_exists($this, $key)) {
+            return $this->$key;
+        } return null;
+    }
     // Create a new user
     public function create(array $user): bool
     {

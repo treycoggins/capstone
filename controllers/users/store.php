@@ -23,9 +23,10 @@ $user['username'] = filter_var($_POST['username'], FILTER_SANITIZE_SPECIAL_CHARS
 $user['password'] = filter_var($_POST['password'], FILTER_SANITIZE_SPECIAL_CHARS);
 $confirmed_password = filter_var($_POST['confirmed'], FILTER_SANITIZE_SPECIAL_CHARS) ?? "";
 
+$newUser->set_user_props($user);
 
 // Validate form data
-$errors['fname'] = Validate::isText($user['fname'], 1, 50) ? "" : "First name must be 1-50 characters";
+$errors["fname"] = Validate::isText($user['fname'], 1, 50) ? "" : "First name must be 1-50 characters";
 $errors['lname'] = Validate::isText($user['lname'], 1, 50) ? "" : "Last name must be 1-50 characters";
 $errors['email'] = Validate::isEmail($user['email']) ? "" : "Invalid email address";
 $errors['username'] = Validate::isText($user['username'], 1, 50) ? "" : "Username must be 1-50 characters";
@@ -40,7 +41,6 @@ $errors['password'] = Validate::isPassword($user['password']) ? "" :
         <li>special characters</li>
         </ul>";
 $errors["confirmed_password"] = $user["password"] === $confirmed_password ? "" : "Passwords do not match";
-$session->set("errors", $errors);
 $invalid = implode($errors);
 
 
@@ -52,9 +52,10 @@ if (!$invalid) {
         $errors["username"] = "That username is already in use.";
         require view("register.view.php");
     } else {
-        $session->set("success", "You are registered as {$user["username"]}.");
-        require view("login.view.php");
+        $session->set_property("fname", $user["fname"]);
+        redirect("/login");
+        exit();
     }
 } else {
-    require_once view("register.view.php");
+    require view("register.view.php");
 }

@@ -15,16 +15,16 @@ $username_sent;
 $password_sent;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $session->set("error", false);
     // get user submitted credentials
-    $username_sent = htmlspecialchars($_POST["username"]);
-    $password_sent = htmlspecialchars($_POST["password"]);
+    $username_sent = htmlspecialchars(trim($_POST["username"]));
+    $password_sent = htmlspecialchars(trim($_POST["password"]));
     $validUser = $user->login($username_sent, $password_sent);
 
     if (!$validUser) {
-        $session->set("error", true);
+        $session->set_property("validation_error", true);
     } else {
-        $session->set("logged_in", true);
+        $session->set_property("logged_in", true);
+        // dd($_SESSION);
         redirect("/account");
         exit();
     }

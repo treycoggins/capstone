@@ -9,21 +9,21 @@
       <small class="text-secondary-dark">New to BitBuggy?</small>
       <p class="font-bold  m-0">Create an Account.</>
         <?php
-        if (isset($_SESSION["errors"]) && !empty($_SESSION["errors"])) {
+        if (isset($errors) && !empty($errors)) {
           echo '<p class="text-sm">There were errors in the form submission. Please correct the form and try again.</p>';
         }
         ?>
       <form id="registration-form" class="flex flex-col text-sm w-full" action="/register" method="POST">
-        <input id="fname" name="fname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="First Name" value="">
+        <input id="fname" name="fname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="First Name" value="<?= isset($newUser) ? $newUser->fname : "" ?>">
         <span class="text-sm text-red-700 mx-2"><?= isset($errors['fname']) ? $errors['fname'] : ''; ?></span>
 
-        <input id="lname" name="lname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Last Name">
+        <input id="lname" name="lname" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Last Name" value="<?= isset($newUser) ? $newUser->lname : "" ?>">
         <span class="text-sm text-red-700 mx-2"><?= isset($errors['lname']) ? $errors['lname'] : ''; ?></span>
 
-        <input id="email" name="email" type="email" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Email Address">
+        <input id="email" name="email" type="email" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Email Address" value="<?= isset($newUser) ? $newUser->email : "" ?>">
         <span class="text-sm text-red-700 mx-2"><?= isset($errors['email']) ? $errors['email'] : ''; ?></span>
 
-        <input id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Username">
+        <input id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Username" value="<?= isset($newUser) ? $newUser->username : "" ?>">
         <span class="text-sm text-red-700 mx-2"><?= isset($errors['username']) ? $errors['username'] : ''; ?></span>
 
         <input id="password" name="password" type="password" class="m-2 rounded-md text-gray-700 border-bg-dark border p-1" placeholder="Password">

@@ -3,19 +3,19 @@
 declare(strict_types=1);
 
 // INIT FUNCTIONS
-function base_path(string $path)
+function base_path(string $path): string
 {
     return BASE_PATH . $path;
 }
 
-function view(string $path, array $errors = [])
+function view(string $path): string
 {
     return base_path("views/" . $path);
 }
 
-function redirect(string $uri)
+function redirect(string $uri): void
 {
-    header("Location: " . $uri);
+    header("Location: {$uri}");
 }
 
 
@@ -63,10 +63,10 @@ function format_date(string $string): string
 //         handle_exception($e);             // Call exception handler
 //     }
 // }
-function dd(string|object|int|bool|array $var): void
+function dd($var): void
 {
     echo "<pre>";
     var_dump($var);
     echo "</pre>";
-    exit();;
+    exit();
 }
