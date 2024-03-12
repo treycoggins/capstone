@@ -25,6 +25,7 @@ $confirmed_password = filter_var($_POST['confirmed'], FILTER_SANITIZE_SPECIAL_CH
 
 $newUser->set_user_props($user);
 
+
 // Validate form data
 $errors["fname"] = Validate::isText($user['fname'], 1, 50) ? "" : "First name must be 1-50 characters";
 $errors['lname'] = Validate::isText($user['lname'], 1, 50) ? "" : "Last name must be 1-50 characters";

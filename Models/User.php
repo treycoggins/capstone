@@ -5,19 +5,19 @@ declare(strict_types=1);
 namespace Models;
 
 use Core\Database;
-use PDOException;
 
 class User
 {
-    public $db;                                       // Holds ref to Database object
+    public $db;                                      
+    public $user_id;
     public $fname = "";
-    public $lname = null;
-    public $email;
-    public $username;
+    public $lname = "";
+    public $email = "";
+    public $username = "";
 
     public function __construct(Database $db)
     {
-        $this->db = $db;                                 // Add ref to Database object
+        $this->db = $db;  
     }
     public function set_user_props($props)
     {
@@ -40,14 +40,7 @@ class User
         $found = $this->db->runSQL($sql, [":username" => $user["username"]])->fetch();
         if (!$found) {
             $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);  // Hash password
-            try {                                                          // Try to add user
-                $sql = "INSERT INTO users (first_name, last_name, email, username, password) 
-                        VALUES (:fname, :lname, :email, :username, :password);"; // SQL to add user
-                $this->db->runSQL($sql, $user);                          // Run SQL
-                return true;                                               // Return true
-            } catch (PDOException $e) {
-                throw $e;                                               // Re-throw exception
-            }
+            return true;
         } else {
             return false;
         }

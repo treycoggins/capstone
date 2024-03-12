@@ -24,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $session->set_property("validation_error", true);
     } else {
         $session->set_property("logged_in", true);
-        // dd($_SESSION);
         redirect("/account");
         exit();
     }

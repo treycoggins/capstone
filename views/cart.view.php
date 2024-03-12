@@ -6,14 +6,15 @@
     <h1 class="text-2xl mt-6 text-center">Your Cart</h1>
 
     <main class="w-screen flex flex-col grow">
+        <?php foreach($items as $item) { ?> 
         <section class="m-6">
             <div class="flex border-2 border-bg-dark items-center p-4 w-full h-auto">
                 <div class="w-1/3 h-auto">
-                    <img class="w-full h-auto" src="img/summer_dress.jpg" alt="product image">
+                    <img class="w-full h-auto" src="img/<?= $item["file_name"] ?>" alt="product image">
                 </div>
                 <div class="w-2/3 text-sm px-4">
-                    <h3 class="">Product Name</h3>
-                    <p>Price:</p>
+                    <h3 class=""><?= $item["product_name"] ?></h3>
+                    <p>P<?= $item["price"] ?></p>
                     <label for="quantity">Quantity:</label>
                     <select id="quantity" name="quantity" class="mx-2">
                         <option value="1">1</option>
@@ -32,6 +33,7 @@
                 </div>
             </div>
         </section>
+        <?php } ?>
         <section class="self-center">
             <button class="bg-primary text-secondary-dark rounded-lg px-4 py-3">Checkout</button>
         </section>

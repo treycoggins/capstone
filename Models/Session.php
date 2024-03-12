@@ -4,6 +4,7 @@ namespace Models;
 
 class Session
 {
+    public $id;
     public function __construct()
     {
         if (session_status() === PHP_SESSION_NONE) {
