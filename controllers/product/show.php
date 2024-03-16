@@ -6,7 +6,6 @@ use Core\App;
 use Core\Database;
 use Models\Product;
 
-
 $db = App::resolve(Database::class);
 $product = new Product($db);
 $products = $product->get_all();

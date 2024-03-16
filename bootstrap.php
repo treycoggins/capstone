@@ -28,11 +28,8 @@ if ($_SERVER["SERVER_ADDR"] === "127.0.0.1") {
     }
 }
 
-$container->bind("Models\Session", function(){
+$container->bind("Models\Session", function () {
     return new Session();
 });
 
 App::setContainer($container);
-
-
-

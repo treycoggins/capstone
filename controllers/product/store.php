@@ -3,12 +3,15 @@
 declare(strict_types=1);
 
 use Core\App;
+use Models\Cart;
 use Core\Database;
 use Models\Product;
 use Models\Session;
 
 $session = App::resolve(Session::class);
+$cart = App::resolve(Cart::class);
 $db = App::resolve(Database::class);
+
 
 $product = new Product($db);
 if (isset($_POST["product_id"])) {
@@ -16,4 +19,4 @@ if (isset($_POST["product_id"])) {
 }
 
 $chosen_product = $product->get($product_id);
-$product->add_to_cart($chosen_product);
+$cart->add($current_user, $chosen_product);

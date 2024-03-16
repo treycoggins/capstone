@@ -742,6 +742,10 @@ video {
   margin-inline-end: 0.5rem;
 }
 
+.mt-8{
+  margin-top: 2rem;
+}
+
 .inline{
   display: inline;
 }
@@ -892,6 +896,10 @@ video {
 
 .flex-wrap{
   flex-wrap: wrap;
+}
+
+.items-end{
+  align-items: flex-end;
 }
 
 .items-center{

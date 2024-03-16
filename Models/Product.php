@@ -15,15 +15,15 @@ class Product
     {
         $this->db = $db;
     }
-    public function get_all(): array
+    public function get_all()
     {
         try {
             $sql = "SELECT * FROM products;";
             $products = $this->db->runSQL($sql)->fetchAll();
+            return $products;
         } catch (PDOException $e) {
             throw $e;
         }
-        return $products;
     }
     public function get($product_id)
     {
@@ -34,24 +34,5 @@ class Product
             throw $e;
         }
         return $product;
-    }
-    public function add_to_cart($product)
-    {
-        try {
-            $values = [
-                ":user_id" => 0,
-                ":product_id" => $product["product_id"],
-                ":product_name" => $product["product_name"],
-                ":price" => $product["price"],
-                ":file_name" => $product["file_name"],
-            ];
-
-            $sql = 'INSERT INTO cart (user_id, product_id, product_name, price, file_name) 
-                    VALUES (:user_id, :product_id, :product_name, :price, :file_name)';
-            $result = $this->db->runSQL($sql, $values);
-            return $result;
-        } catch (PDOException $e) {
-            throw $e;
-        }
     }
 }

@@ -13,10 +13,6 @@ function view(string $path): string
     return base_path("views/" . $path);
 }
 
-function redirect(string $uri): void
-{
-    header("Location: {$uri}");
-}
 
 
 // FORMATTING FUNCTIONS

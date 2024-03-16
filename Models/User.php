@@ -8,16 +8,17 @@ use Core\Database;
 
 class User
 {
-    public $db;                                      
+    public $db;
     public $user_id;
     public $fname = "";
     public $lname = "";
     public $email = "";
     public $username = "";
+    public $password = "";
 
     public function __construct(Database $db)
     {
-        $this->db = $db;  
+        $this->db = $db;
     }
     public function set_user_props($props)
     {
@@ -27,19 +28,24 @@ class User
             }
         }
     }
-    public function get_user_prop($key) {
+    public function get_user_prop($key)
+    {
         if (property_exists($this, $key)) {
             return $this->$key;
-        } return null;
+        }
+        return null;
     }
     // Create a new user
-    public function create(array $user): bool
+    public function create($user)
     {
         // Check database for chosen username
         $sql = "SELECT * FROM users WHERE username = :username;";
         $found = $this->db->runSQL($sql, [":username" => $user["username"]])->fetch();
         if (!$found) {
             $user['password'] = password_hash($user['password'], PASSWORD_DEFAULT);  // Hash password
+            $sql = "INSERT INTO users (first_name, last_name, email, username, password)
+                    VALUES (:fname, :lname, :email, :username, :password);";
+            $this->db->runSQL($sql, $user);
             return true;
         } else {
             return false;
@@ -53,7 +59,7 @@ class User
         $user = $this->db->runSQL($sql, [$username])->fetch();
         // If user found, does password match hashed password? If so, go to Account page for user. If not, return to login page.
         if ($user) {
-            return password_verify($password, $user["password"]) ? true : false;
+            return password_verify($password, $user["password"]) ? $user : false;
         } else {
             return require view("login.view.php");
         }

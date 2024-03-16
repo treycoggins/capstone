@@ -9,10 +9,10 @@ use Models\User;
 
 $db = App::resolve(Database::class);
 $session = App::resolve(Session::class);
-$user = new User($db);
 
 $username_sent;
 $password_sent;
+$validation_error = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // get user submitted credentials
@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $validUser = $user->login($username_sent, $password_sent);
 
     if (!$validUser) {
-        $session->set_property("validation_error", true);
+        $validation_error = true;
     } else {
-        $session->set_property("logged_in", true);
-        redirect("/account");
+        $session->set("logged_in", true);
+        require view("account.view.php");
         exit();
     }
 }

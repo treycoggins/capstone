@@ -5,25 +5,31 @@ namespace Models;
 class Session
 {
     public $id;
+    public $fname;
+    public $role;
     public function __construct()
     {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
+        $this->id = $_SESSION["id"] ?? 0;
+        $this->fname = $_SESSION["fname"] ?? "";
+        $this->role = $_SESSION["role"] ?? "guest";
     }
-    public function get_session(): array
+    public function create($user)
+    {
+        $_SESSION["id"] = $user["user_id"];
+        $_SESSION["fname"] = $user["fname"];
+        $_SESSION["role"] = $user["role"];
+    }
+    public function get()
     {
         return $_SESSION;
     }
-    public function set_property($key, $value)
-    {
-        $_SESSION[$key] = $value;
+    public function set($prop, $value) {
+        $_SESSION["$prop"] = $value;
     }
-    public function get_property($key)
-    {
-        return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
-    }
-    public function destroy(): void
+    public function destroy()
     {
         $_SESSION = [];                                  // Empty $_SESSION super global
         $param    = session_get_cookie_params();         // Get session cookie parameters
