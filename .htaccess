@@ -4,19 +4,9 @@ php_flag    log_errors      On
 php_value   error_reporting E_ALL
 php_value   error_log       /error.log
 
-# Redirect to error pages
-ErrorDocument 404 /views/404.php
-ErrorDocument 500 /views/500.php
-
-# Disable directory browsing
-Options -Indexes
-
-# Set the default page
-DirectoryIndex index.html index.php
-
 # Rewrite all requests to index
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?q=$1 [L]
+RewriteRule ^(.*)$ public/ [L]
 
