@@ -1,7 +1,7 @@
 <?php
+declare(strict_types=1);
+use Core\App;
+use Models\Session;
+$session = App::resolve(Session::class);
 
-// MUST be first line
-require "includes/functions.php";
-
-// include the view
-require "views/contact.view.php";
+require view("contact.view.php");

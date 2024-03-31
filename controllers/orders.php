@@ -1,7 +1,8 @@
  <?php
 
-   // MUST be first line
-   require "includes/functions.php";
-   session_start();        // Start or renew the session
+  use Core\App;
+  use Models\Session;
 
-   require "views/orders.view.php";
+  $session = App::resolve(Session::class);
+
+  require view("orders.view.php");

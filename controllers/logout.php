@@ -1,9 +1,12 @@
 <?php
-include "models/login.model.php";
-session_start();
-logout();
-$delay = 5;
-$redirect = "/home";
-header("Refresh: $delay, URL=$redirect");
-require "views/logout.view.php";
-die();
+
+declare(strict_types=1);
+header("Refresh: 4, URL=/");                           // Destroy the session
+
+use Core\App;
+use Models\Session;
+
+$session = App::resolve(Session::class);
+$session->destroy();
+require view("logout.view.php");
+exit();

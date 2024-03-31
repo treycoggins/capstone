@@ -1,0 +1,77 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+:root {
+	--primary-light: rgb(56, 120, 93);
+	--primary: rgb(23, 84, 66);
+	--primary-dark: rgb(6, 52, 39);
+	--secondary-light: #c4a15d;
+	--secondary-dark: rgb(175, 140, 74);
+}
+
+/* Focus styles for screen readers */
+:focus {
+	outline: 2px solid rgb(0, 59, 114);
+	background-color: rgba(0, 59, 114, 0.4);
+}
+
+/*/////////////////		ANIMATIONS		//////////d////////*/
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+/*//////////////////	HOMEPAGE	/////////////////////////*/
+#overlay {
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 10;
+}
+.overlay-visible {
+	animation: fadeIn 1s ease;
+	width: 100vw;
+	opacity: 1;
+	z-index: 10;
+}
+.overlay-hidden {
+	animation: fadeOut 1s ease;
+	width: 0;
+	opacity: 0;
+}
+#nav {
+	left: -70vw;
+	width: 70vw;
+}
+.nav-open {
+	z-index: 20;
+	transform: translateX(70vw);
+	transition: transform 1s ease;
+	animation: fadeIn;
+}
+.nav-close {
+	z-index: 20;
+	transform: translateX(0vw);
+	transition: transform 1s ease;
+	animation: fadeOut;
+}
+
+
+/*//////////////////	BUTTONS		/////////////////////////*/
+
+
+/*//////////////////	UTILITY CLASSES		/////////////////////////*/
+

@@ -5,4 +5,9 @@ node_modules/
 vendor/
 *.log
 .env
+<<<<<<< HEAD
 .htaccess
+=======
+/logs/
+.htaccess
+>>>>>>> trey

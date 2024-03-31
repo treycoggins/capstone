@@ -1,5 +1,4 @@
-<?php require 'partials/_head.php'; ?>
-</head>
+<?php require "partials/_head.php"; ?>
 
 <body class="bg-bg-light text-primary font-sans relative">
   <?php require "partials/_header.php" ?>
@@ -7,14 +6,15 @@
 
   <main class="relative">
     <section class="m-6">
-      <?php foreach ($products as $product) { ?>
+      <?php foreach ($products as $index => $product) { ?>
         <div class="pb-8 border-2 border-bg-dark p-4 my-10">
           <img src="<?= $product['file_path'] . $product['file_name']; ?>" alt="product image" class="w-60 h-auto mb-4">
           <h3 class=""><?= $product['product_name']; ?></h3>
           <p class="text-xs m-2"><?= $product['description']; ?></p>
           <p class="">$<?= $product['price']; ?></p>
           <div class="flex justify-end">
-            <a href="/cart" class="bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</a>
+              <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
+              <button data-product-id="<?= $index + 1 ?>" class="add-to-cart bg-primary-light text-secondary-dark rounded-md mt-6 max-w-40 py-3 px-6 cursor-pointer">Add to Cart</button>
           </div>
         </div>
       <?php }; ?>

@@ -1,6 +1,12 @@
 <?php
+namespace Core;
 class Validate
 {
+    public static function isValidComment(string $value, $min = 1, $max = 1000): bool
+    {
+        $value = trim($value);
+        return strlen($value) >= $min && strlen($value) <= $max;
+    }
     public static function isNumber($number, $min = 0, $max = 100): bool
     {
         return ($number >= $min and $number <= $max);
@@ -19,7 +25,8 @@ class Validate
 
     public static function isPassword($password)
     {
-        if ( mb_strlen($password) >= 8                     // Length 8 or more chars
+        if (
+            mb_strlen($password) >= 8                     // Length 8 or more chars
             and preg_match('/[A-Z]/', $password)             // Contains uppercase A-Z
             and preg_match('/[a-z]/', $password)             // Contains lowercase a-z
             and preg_match('/[0-9]/', $password)             // Contains 0-9
@@ -27,25 +34,5 @@ class Validate
             return true;                                     // Passed all tests
         }
         return false;                                      // Invalid password
-    }
-
-    public static function isMemberId($member_id, array $member_list): bool
-    {
-        foreach ($member_list as $member) {
-            if ($member['id'] == $member_id) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static function isCategoryId($category_id, array $category_list): bool
-    {
-        foreach ($category_list as $category) {
-            if ($category['id'] == $category_id) {
-                return true;
-            }
-        }
-        return false;
     }
 }

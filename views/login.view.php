@@ -1,29 +1,34 @@
-<?php include "partials/_head.php"; ?>
-</head>
+<?php require "partials/_head.php"; ?>
 
-<body class="bg-bg-light text-secondary-dark font-sans min-h-screen flex flex-col">
-  <?php include "partials/_header.php" ?>
-  <?php include "partials/_nav.php" ?>
-  <main class="flex flex-col w-full mx-4 my-16 tablet:mx-auto tablet:max grow">
-    <h1 class="text-4xl tablet:mx-auto tablet:text-7xl desktop:text-9xl tablet:my-8">Welcome</h1>
-    <div class="flex flex-col tablet:order-3 tablet:items-center">
-      <p class="text-lg mb-2">New to BitBuggy?</p>
-      <div class="mb-8">
-        <a href="/signup" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs">Create an Account</a>
-      </div>
+<body class="bg-bg-light text-secondary-dark font-sans h-screen w-screen flex flex-col">
+  <?php require "partials/_header.php" ?>
+  <?php require "partials/_nav.php" ?>
+  <main class="w-full py-6 grow flex flex-col items-center justify-center">
+
+    <h1 class="text-4xl my-2 text-center tablet:text-7xl">Welcome</h1>
+    <p>Please sign in to continue.</p>
+
+    <div class="flex flex-col m-4 tablet:order-3 tablet:items-center">
+      <p class="text-lg">New to BitBuggy?</p>
+      <a tabindex="13" href="/register" class="p-1.5 rounded-md bg-secondary-dark text-primary text-xs text-center">Create an Account</a>
     </div>
-    <section class="flex flex-col justify-center border-secondary-dark border-2 w-10/12 mx-auto my-8 p-4 laptop:w-7/12 desktop:max-w-2xl laptop:p-10">
+    <section class="w-10/12 tablet:w-1/2 laptop:max-w-xl flex flex-col justify-center border-secondary-dark border-2 mx-auto my-4 p-4">
       <small class="text-secondary-dark tablet:text-lg">Already a customer?</small>
       <p class="font-bold text-primary m-0">Sign in.</p>
-      <form class="flex flex-col self-center my-10 w-11/12 text-secondary-dark" action="/login" method="POST">
-        <label for="username" class="ms-4">Username</label>
-        <input id="username" name="username" type="text" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
-        <label for="password" class="ms-4">Password</label>
-        <input type="password" id="password" name="password" class="m-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
-        <button type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none m-4 rounded-md">Continue</button>
+      <form class="flex flex-col self-center mt-10 w-11/12 text-secondary-dark" action="/login" method="POST">
+        <label for="username" class="ms-2">Username</label>
+        <input tabindex="10" id="username" name="username" type="text" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
+        <label for="password" class="ms-2">Password</label>
+        <input tabindex="11" type="password" id="password" name="password" class="my-2 rounded-md text-gray-700 border-secondary-dark border-2 p-1.5">
+
+        <?= $validation_error ?
+          '<p class="text-red-700 text-center">Invalid username or password</p>' : "";
+        $validation_error = null; ?>
+
+        <button tabindex="12" type="submit" name="submit-btn" class="bg-secondary-dark text-primary p-5 border-none my-4 rounded-md">Continue</button>
       </form>
     </section>
   </main>
 
 
-  <?php include "partials/_footer.php"; ?>
+  <?php require "partials/_footer.php"; ?>
